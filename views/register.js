@@ -34,13 +34,3 @@ function domLoaded() {
 			}
 	});
 }
-
-
-
-	// user.registerUser(payload).then(function(response){
-		// Response:
-		// 200 - {
-		//     	"authenticated": true,
-		//     	"accessToken": "5nyQ3ImfwzsbufjW7vJPr2qY3mPJ-3Rs"
-		// }
-		// 409 -  {message: “Username already existing”}

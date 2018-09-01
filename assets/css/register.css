@@ -131,10 +131,9 @@ and (max-device-width : 1024px) {
 
 	container {
 	    display: block;
-	    width: 66.5%;
- 	    margin: 0 auto;
+	    width: 67.5%;
+ 	    margin-left: 24.5%;
 	    background-color: rgb(255,238,0);
-	    border: 1px outset #F56C3C;
 	    padding: 1vh;
 	}
 
@@ -178,6 +177,7 @@ and (max-device-width : 1024px) {
     /* Red and black silhouettes*/
 	.uma{
    	    width: 25%;
+   	    clear: right;
 	    /*border: 1px solid black;*/
 	}
 	.left {
@@ -193,17 +193,22 @@ and (max-device-width : 1024px) {
 	}	
 
 	#info-logo{
-		position: relative;
-		top: 1vh;
+		position: absolute;
+	    top: 4em;
+    	left: 37%;
 	}
 	#info-message {
-	    width: 30%; 
+	    width: 40%; 
 	    /*border: 1px solid black;*/
-	}
+	    display: inline-block;
+		}
+
 	.right-info {
-		position: absolute;
-		left: 67%;
-		top: 9vh;
+		text-align: right;
+		margin-right: 5%;
+		float: right;
+		clear: both;
+		display: inline-block;
 	}
 	.right-info:hover {
 		color: red;
