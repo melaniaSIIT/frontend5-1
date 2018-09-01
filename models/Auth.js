@@ -15,6 +15,7 @@
         success: function(result){
           console.log('Producer added to database!');
           return result;
+          
         }
       });
   }
