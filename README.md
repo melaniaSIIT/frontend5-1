@@ -1,4 +1,5 @@
 ﻿To use 12 grid, place this HTML in container you want to divide / 12	
+Make sure container is not positioned static 
 
 <!-- 12 GRID  -->
 		  <div class='grid grid_bar_1'></div>
@@ -23,7 +24,7 @@ Add CSS:
 		position: absolute;
 		height: 100%;
 		width: 2px;
-		background-color: white;
+		background-color: red;
 		top: 0;
 		/*display: none;  */ 
 	}

@@ -1,84 +1,5 @@
-/* For each phone, first query is landscape orientation, second is portrait orientation. Last query is for desktop style.*/
-
-
-/*/ iPhone 5 ----------- = /*/
-@media only screen 
-and (min-device-width: 320px) 
-and (max-device-height: 568px) 
-and (orientation : landscape) 
-and (-webkit-device-pixel-ratio: 2){
-}
-
-@media only screen 
-and (min-device-width: 320px) 
-and (max-device-height: 568px) 
-and (orientation : portrait) 
-and (-webkit-device-pixel-ratio: 2){
-}
-
-/*/ iPhone 6 ----------- /*/
-@media only screen 
-and (min-device-width: 375px) 
-and (max-device-height: 667px) 
-and (orientation : landscape) 
-and (-webkit-device-pixel-ratio: 2){
-}
-
-@media only screen 
-and (min-device-width: 375px) 
-and (max-device-height: 667px) 
-and (orientation : portrait) 
-and (-webkit-device-pixel-ratio: 2){
-}
-
-/*/ iPhone 6+ ----------- /*/
-@media only screen 
-and (min-device-width: 414px) 
-and (max-device-height: 736px) 
-and (orientation : landscape) 
-and (-webkit-device-pixel-ratio: 2){
-}
-
-@media only screen 
-and (min-device-width: 414px) 
-and (max-device-height: 736px) 
-and (orientation : portrait) 
-and (-webkit-device-pixel-ratio: 2){
-}
-
-/*/ Samsung Galaxy S5 ----------- /*/
-@media only screen 
-and (min-device-width: 360px) 
-and (max-device-height: 640px) 
-and (orientation : landscape) 
-and (-webkit-device-pixel-ratio: 3){
-}
-
-@media only screen 
-and (min-device-width: 360px) 
-and (max-device-height: 640px) 
-and (orientation : portrait) 
-and (-webkit-device-pixel-ratio: 3){
-}
-
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : landscape) {
-}
-
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
-}
-
-
-
-
 /*/ Start of DESKTOP styles ----------- /*/
-@media only screen  and (min-width : 1224px) {
+@media only screen  and (max-width : 2800px) {
 	* {
 		box-sizing: border-box;
 	}
@@ -105,13 +26,15 @@ and (max-device-width : 1024px) {
 		margin-top: 10vh;
 		padding-top: 3.8vh;
 		padding-bottom: 12vh;
+		overflow: overlay; 
+
 	}
 
 	.grid{
 		position: absolute;
 		height: 100%;
 		width: 2px;
-		background-color: white;
+		background-color: white;	
 		top: 0;
 		display: none;   
 	}
@@ -128,11 +51,19 @@ and (max-device-width : 1024px) {
 	.grid_bar_11{left:91.33%;}
 	.grid_bar_12{left:99.75%;}
 
+	.container-left {
+		display: inline-block;
+		width: 20%;
+		margin-left: 3%;
+		overflow: overlay; 
+		clear: right;
+	}
 
-	container {
-	    display: block;
+	.container-right {
+	    display: inline-block;
+	    float:right;
 	    width: 67.5%;
- 	    margin-left: 24.5%;
+	    margin-right: 8%;
 	    background-color: rgb(255,238,0);
 	    padding: 1vh;
 	}
@@ -145,23 +76,21 @@ and (max-device-width : 1024px) {
 	}
 
 	input{
-		position: absolute;
 		border: 1px outset #f56c57;
-	    left: 2.5%;
-		top: 10vh;
+		margin-top: 1vh;
 	}
 	input:nth-of-type(2)  {
 		border: 1px inset #f56c57;
-		top: 14vh;
 	}
 
 	input[type="submit"] {
 		color: white;
 		background-color: rgb(66, 134, 244);
+		display: block;
+		margin-top: 1vh;
 		width: 77px;
 		height: 25px;
 		font-size: 95%;
-		top: 18vh;
 		border: none;
 	}
 	input[type = "submit"]:hover {
@@ -178,7 +107,6 @@ and (max-device-width : 1024px) {
 	.uma{
    	    width: 25%;
    	    clear: right;
-	    /*border: 1px solid black;*/
 	}
 	.left {
 	    float: left;
@@ -195,9 +123,10 @@ and (max-device-width : 1024px) {
 	#info-logo{
 		position: relative;
     	top: 0.4em;
+    	left: -10%;
 	}
 	#info-message {
-	    width: 20%; 
+	    width: 30%; 
 	    display: inline-block;
 		}
 
@@ -217,11 +146,10 @@ and (max-device-width : 1024px) {
 		transition: 1.15s;
 	}
 	.gdpr-disclaimer {
-		position: absolute;
-		width: 13%;
+		width: 70%;
 		top: 25vh;
 		left: 2.5%;
-		line-height: 2vh;
+		line-height: 16px;
 		font-size: .75em;
 
 	}
@@ -230,18 +158,226 @@ and (max-device-width : 1024px) {
 		font-size: .8em;
 	}
 	#gdpr-radio {
-		position: absolute;
 		top: 37vh;
 		left: 2.25%;
 	}
 	#small-arrow {
-		position: absolute;
-		width: 1%;
-		top: 37vh;
-		left: 6%;
+		position: relative;
+		width: 6%;
+		top:2px;
+		left: 10%;
 		transition: 1s;
 	}
 
-	
-
 }
+
+
+/* Styles related to moving around things that break*/
+@media only screen  and (max-width : 1275px) {
+	#info-logo{
+		left: -3%;
+	}}
+@media only screen  and (max-width : 950px){
+	#info-logo{
+		left: 0%;
+	}}
+@media only screen  and (max-width : 800px){
+	.gdpr-disclaimer{
+		width: 100%;
+	}}
+
+
+
+
+
+/* Start of PHONE styles */
+
+
+/*/ iPhone 5 and 6 ----------- = /*/
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-height: 667px) 
+and (-webkit-device-pixel-ratio: 2){
+	.container{
+		width: 80%;
+	}
+	.container-right{
+		margin-right: 10%;
+	}
+	.container-left{
+		display: block;
+		margin: 0 auto;
+	}
+	.gdpr-disclaimer{
+		line-height: 1.5em;
+	}
+	#info-message {
+		font-size: 0.85em;
+	    width: 40%; 
+	    display: inline-block;
+	}
+	#info-logo {
+		width: 5%;
+		top: -0.7em;
+		left: -5%;
+	}
+}
+
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-height: 768px) 
+and (orientation : landscape) 
+and (-webkit-device-pixel-ratio: 2){
+	#info-logo {
+		top: 0.5em;
+	}
+}
+
+
+/*/ iPhone 6+  ----------- /*/
+
+@media only screen 
+and (min-device-width: 414px) 
+and (max-device-height: 736px) 
+and (orientation : portrait) 
+/* THIS SHOULD BE UNCOMMENTED but if we do that, CHROME can't see it*/
+/*and (-webkit-device-pixel-ratio: 2)*/{
+	.container{
+		width: 80%;
+	}
+	.container-right{
+		margin-right: 10%;
+	}
+	.container-left{
+		display: block;
+		margin: 0 auto;
+	}
+	.gdpr-disclaimer{
+		line-height: 1.5em;
+	}
+	#info-message {
+		font-size: 0.85em;
+	    width: 40%; 
+	    display: inline-block;
+	}
+	#info-logo {
+		width: 5%;
+		top: -0.7em;
+		left: -8%;
+	}
+}
+
+
+/* IPHONE X (portrait) */
+
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-height: 812px) 
+and (-webkit-device-pixel-ratio: 3){
+	.container{
+		width: 80%;
+	}
+	.container-right{
+		margin-right: 10%;
+	}
+	.container-left{
+		display: block;
+		margin: 0 auto;
+	}
+	.gdpr-disclaimer{
+		line-height: 1.5em;
+	}
+	#info-message {
+		font-size: 0.85em;
+	    width: 40%; 
+	    display: inline-block;
+	}
+	#info-logo {
+		width: 7%;
+		top: -0.5em;
+		left: -7%;
+	}
+}
+
+/*/ Samsung Galaxy S5 (portrait and landscape) ----------- /*/
+
+@media only screen 
+and (min-device-width: 360px) 
+and (max-device-height: 640px) 
+and (-webkit-device-pixel-ratio: 3){
+	.container{
+		width: 80%;
+	}
+	.container-right{
+		margin-right: 10%;
+	}
+	.container-left{
+		display: block;
+		margin: 0 auto;
+	}
+	.gdpr-disclaimer{
+		line-height: 1.5em;
+	}
+	#info-message {
+		font-size: 0.85em;
+	    width: 40%; 
+	    display: inline-block;
+	}
+	#info-logo {
+		width: 5%;
+		top: -0.7em;
+		left: -8%;
+	}
+}
+@media only screen 
+and (min-device-width: 360px) 
+and (max-device-height: 640px) 
+and (orientation : landscape) 
+and (-webkit-device-pixel-ratio: 3){
+	#info-logo {
+		top: 0.5em;
+	}
+}
+
+
+
+/* iPads (portrait and landscape) ----------- */
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+	#info-logo {
+    left: -5%;
+    top: -0.5em;
+	}
+	#small-arrow {
+    width: 10%;
+    top: -1px;
+    }
+    .right-info{
+    	margin-right: 0%;
+    }
+}
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+	#info-logo {
+    left: -5%;
+    top: 0.5em;
+	}
+}
+
+
+/*IPHONE X (landscape) */
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-height: 812px) 
+and (orientation : landscape)
+and (-webkit-device-pixel-ratio: 3) {
+	#small-arrow {
+    width: 4%;
+    top: 4px;
+	}
+}
+
