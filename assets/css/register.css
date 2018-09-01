@@ -113,7 +113,7 @@ and (max-device-width : 1024px) {
 		width: 2px;
 		background-color: white;
 		top: 0;
-		display: none; 
+		display: none;   
 	}
 	.grid_bar_1{left:8.33%;}
 	.grid_bar_2{left:16.7%;}
@@ -193,13 +193,11 @@ and (max-device-width : 1024px) {
 	}	
 
 	#info-logo{
-		position: absolute;
-	    top: 4em;
-    	left: 37%;
+		position: relative;
+    	top: 0.4em;
 	}
 	#info-message {
-	    width: 40%; 
-	    /*border: 1px solid black;*/
+	    width: 20%; 
 	    display: inline-block;
 		}
 
@@ -241,6 +239,7 @@ and (max-device-width : 1024px) {
 		width: 1%;
 		top: 37vh;
 		left: 6%;
+		transition: 1s;
 	}
 
 	

@@ -23,7 +23,9 @@ function domLoaded() {
 		if($('#password').val().length > 7){
 			pass = $('#password').val();
 		}
-		if ((user != null && user !== undefined) && (pass != null && pass !== undefined))
+		let agree_gdpr = $('#gdpr-radio').prop("checked");
+		console.log()
+		if ((user != null && user !== undefined) && (pass != null && pass !== undefined) && (agree_gdpr))
 			{
 				let payload={
 							username: user,
@@ -32,5 +34,9 @@ function domLoaded() {
 				console.log(payload);
 				register(payload);
 			}
+		else if ((user != null && user !== undefined) && (pass != null && pass !== undefined) && !(agree_gdpr))
+		{
+			$('#small-arrow').css('left','5%');
+		}
 	});
 }
