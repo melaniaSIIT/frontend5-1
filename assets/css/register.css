@@ -107,6 +107,28 @@ and (max-device-width : 1024px) {
 		padding-bottom: 12vh;
 	}
 
+	.grid{
+		position: absolute;
+		height: 100%;
+		width: 2px;
+		background-color: white;
+		top: 0;
+		display: none; 
+	}
+	.grid_bar_1{left:8.33%;}
+	.grid_bar_2{left:16.7%;}
+	.grid_bar_3{left:25%;}
+	.grid_bar_4{left:33.33%;}
+	.grid_bar_5{left:41.66%;}
+	.grid_bar_6{left:50%;}
+	.grid_bar_7{left:58.33%;}
+	.grid_bar_8{left:66.7%;}
+	.grid_bar_9{left:75%;}
+	.grid_bar_10{left:83.33%;}
+	.grid_bar_11{left:91.33%;}
+	.grid_bar_12{left:99.75%;}
+
+
 	container {
 	    display: block;
 	    width: 66.5%;
@@ -175,13 +197,13 @@ and (max-device-width : 1024px) {
 		top: 1vh;
 	}
 	#info-message {
-	    width: 30%;
+	    width: 30%; 
 	    /*border: 1px solid black;*/
 	}
 	.right-info {
 		position: absolute;
 		left: 67%;
-		top: 11vh;
+		top: 9vh;
 	}
 	.right-info:hover {
 		color: red;
@@ -204,26 +226,18 @@ and (max-device-width : 1024px) {
 		top: 40vh;
 		font-size: .8em;
 	}
-	.grid{
+	#gdpr-radio {
 		position: absolute;
-		height: 100%;
-		width: 2px;
-		background-color: white;
-		top: 0;
-		/*display: none; */
+		top: 37vh;
+		left: 2.25%;
 	}
-	.grid_bar_1{left:8.33%;}
-	.grid_bar_2{left:16.7%;}
-	.grid_bar_3{left:25%;}
-	.grid_bar_4{left:33.33%;}
-	.grid_bar_5{left:41.66%;}
-	.grid_bar_6{left:50%;}
-	.grid_bar_7{left:58.33%;}
-	.grid_bar_8{left:66.7%;}
-	.grid_bar_9{left:75%;}
-	.grid_bar_10{left:83.33%;}
-	.grid_bar_11{left:91.33%;}
-	.grid_bar_12{left:99.75%;}
+	#small-arrow {
+		position: absolute;
+		width: 1%;
+		top: 37vh;
+		left: 6%;
+	}
 
+	
 
 }

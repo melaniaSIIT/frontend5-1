@@ -1,6 +1,4 @@
 
-
-
   function User(options) {
       options = options || {};
       this.username = options.username;
@@ -14,8 +12,6 @@
         data: data,
         success: function(result){
           console.log('Producer added to database!');
-          return result;
-          
         }
       });
   }

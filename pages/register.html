@@ -13,10 +13,10 @@
   <link rel="stylesheet" href="../assets/css/register.css" type="text/css">
 </head>
 
-	<body>
-
+	<body>	
+		<!-- YELLOW WRAPPER -->
 		<wrapper>
-		<!-- 12 GRID  -->
+		  <!-- 12 GRID  -->
 		  <div class='grid grid_bar_1'></div>
 		  <div class='grid grid_bar_2'></div>
 		  <div class='grid grid_bar_3'></div>
@@ -30,6 +30,7 @@
 		  <div class='grid grid_bar_11'></div>
 		  <div class='grid grid_bar_12'></div>
 
+		  <!-- INPUT FORMS & GDPR TEXT -->
 		  <form action = "" target = "dummyframe">         
 		   		<input type = "text" placeholder = "Username" id = "username" name = "_username" required />
 		   		<br/>
@@ -38,28 +39,26 @@
 				<input id = "submit" type = "submit" value = "Register">
 		  </form>
 		  <p class='gdpr-disclaimer'>This site requires cookies to function properly. To continue registering you must consent to our <a>Cookie & Privacy policies</a>.</p>
+       	  <input type = "radio" name = "gdpr" id = "gdpr-radio" value = "false"> 
+       	  <img id='small-arrow' src="../assets/images/register/small_arrow.png"  alt="small_arrow"
 		  </br>
-		  <P class='gdpr-disclaimer'>You can opt-out at any time.</P>
+		  <P class='gdpr-disclaimer'>You can <a>opt-out</a> at any time.</P>
 
+		  <!-- CONTAINER -->
 		  <container class='clearfix'>
-
 		 	<p id='info-message'><img id='info-logo' src="../assets/images/register/logo.png"  alt="info_logo">
-		 	Register as a producer
-		 	</p>
+		 	Register as a producer</p>
 
-		 	<p id='info-message' class='right-info'>Already a producer?
-		 	</p>
-
+		 	<p id='info-message' class='right-info'>Already a producer?</p>
 
 		    <img class="uma left"  src="../assets/images/register/left.png"  alt="uma_thurman_black_silhouette">
 		    <img class="uma right" src="../assets/images/register/right.png" alt="uma_thurman_red_silhouette">
 
-		    
-
-
-		    <!-- this iframe is targeted by the above form so that the information displayed in console stays there-->
+		    <!-- this iframe is targeted by form above-->
 		    <iframe width="0" height="0" border="0" name="dummyframe"></iframe>
 		  </container>
+
+
 		</wrapper>
 	</body>
 </html>
