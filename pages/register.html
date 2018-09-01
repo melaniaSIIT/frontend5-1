@@ -1,20 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <style>@import url('https://fonts.googleapis.com/css?family=Open+Sans');</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-
   <script src="../models/Auth.js" type="text/javascript"></script>
   <script src="../views/register.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="../assets/css/reset.css" type="text/css">
+  <link rel="stylesheet" href="../assets/css/register.css" type="text/css">
 </head>
-<body>
-salut fratele
+
+	<body>
+
+		<wrapper>
+		  <form action = "" target = "dummyframe">         
+		   		<input type = "text" placeholder = "First name" id = "fName" name = "FirstName"><br/>
+				<input type = "text" placeholder = "Last name" id = "lName" name = "LastName"><br>
+				<input id = "submit" type = "submit" value = "Submit">
+		  </form>
+		  <p class='gdpr-disclaimer'>This site requires cookies to function properly. To continue using our app you must consent to our Cookie & Privacy policies.</p>
+		  </br>
+		  <P class='gdpr-disclaimer'>You can opt-out at any time.</P>
+
+		  <container class='clearfix'>
+
+		 	<p id='info-message'><img id='info-logo' src="../assets/images/register/logo.png"  alt="info_logo">
+		 	Register as a producer
+		 	</p>
+
+		 	<p id='info-message' class='right-info'>Already a producer?
+		 	</p>
 
 
+		    <img class="uma left"  src="../assets/images/register/left.png"  alt="uma_thurman_black_silhouette">
+		    <img class="uma right" src="../assets/images/register/right.png" alt="uma_thurman_red_silhouette">
 
-</body>
+		    
+
+
+		    <!-- this iframe is targeted by the above form so that the information displayed in console stays there-->
+		    <iframe width="0" height="0" border="0" name="dummyframe"></iframe>
+		  </container>
+		</wrapper>
+	</body>
 </html>
+
+

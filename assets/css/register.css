@@ -74,7 +74,123 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px) {
 }
 
-/*/ Desktops and laptops ----------- /*/
+
+
+
+/*/ Start of DESKTOP styles ----------- /*/
 @media only screen  and (min-width : 1224px) {
+	* {
+		box-sizing: border-box;
+	}
+	html {
+  		height: 100%; /*for older browsers*/
+  		height: 100vh; 
+	}
+	body {
+  	    min-height: 100%; /*for older browsers*/
+  	    min-height: 100vh;
+	}
+
+	wrapper {
+ 	    position: relative;
+	    background-color: rgb(255,238,0);
+		display: block;
+		margin-top: 10vh;
+		padding-top: 3.8vh;
+		padding-bottom: 12vh;
+	}
+
+	container {
+	    display: block;
+	    width: 65%;
+ 	    margin: 0 auto;
+	    background-color: rgb(255,238,0);
+	    border: 1px outset #F56C3C;
+	    padding: 1vh;
+	}
+
+
+	/* The browser, by default, colours yellow an input box when it is autofilled. Below code colours the input box
+	white always. Another way around the yellow shadow is turning autocomplete off for the form, but lets not */
+	input:-webkit-autofill {
+	    -webkit-box-shadow: 0 0 0px 1000px white inset;
+	}
+
+	input{
+		position: absolute;
+		border: 1px outset #f56c57;
+	    left: 2.5%;
+		top: 10vh;
+	}
+	input:nth-of-type(2)  {
+		border: 1px inset #f56c57;
+		top: 14vh;
+	}
+
+	input[type="submit"] {
+		color: white;
+		background-color: rgb(66, 134, 244);
+		width: 65px;
+		height: 25px;
+		font-size: 95%;
+		top: 18vh;
+		border: none;
+	}
+	input[type = "submit"]:hover {
+	    cursor: pointer;
+	}
+	iframe {
+	    display: none;
+	}
+	body {
+	    font-family: 'Open Sans', sans-serif;
+	}
+	.uma{
+   	    width: 30%;
+	    /*border: 1px solid black;*/
+	}
+	.left {
+	    float: left;
+	}
+	.right {
+	    float: right;
+	}
+	.clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+	}	
+
+	#info-logo{
+		position: relative;
+		top: 1vh;
+	}
+	#info-message {
+	    width: 30%;
+	    /*border: 1px solid black;*/
+	}
+	.right-info {
+		position: absolute;
+		left: 67%;
+		top: 13.25vh;
+	}
+	.right-info:hover {
+		color: red;
+		transition: 1.33s;
+		cursor: pointer;
+	}
+	.right-info:not(:hover){
+		transition: 1.15s;
+	}
+	.gdpr-disclaimer {
+		position: absolute;
+		width: 13%;
+		top: 25vh;
+		left: 2.5%;
+	}
+	.gdpr-disclaimer:nth-of-type(2) {
+		top: 47vh;
+	}
+	.gdpr-disclaimer:nth-of-type(2)
 
 }
