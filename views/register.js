@@ -36,7 +36,27 @@ function domLoaded() {
 			}
 		else if ((user != null && user !== undefined) && (pass != null && pass !== undefined) && !(agree_gdpr))
 		{
-			$('#small-arrow').css('left','5%');
+			moveArrow();
 		}
 	});
+
+	// Various click handlers
+	$('#info-logo').click(function(){
+		$('info').css('display','inline-block');
+	})
+	$('#info-message').click(function(){
+		$('info').css('display','inline-block');
+		moveArrow();
+	})
+	$('#gdpr-link').click(function(){
+		$('cookieInfo').css('display','inline-block');
+	})
+	$('#opt-out').click(function(){
+		location.reload();
+	})
+	
+	// Moves small arrow @gdpr to alert user
+	function moveArrow(){
+		$('#small-arrow').css('left','5%');
+	}
 }

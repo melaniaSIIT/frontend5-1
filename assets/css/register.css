@@ -27,9 +27,7 @@
 		padding-top: 3.8vh;
 		padding-bottom: 12vh;
 		overflow: overlay; 
-
 	}
-
 	.grid{
 		position: absolute;
 		height: 100%;
@@ -51,14 +49,17 @@
 	.grid_bar_11{left:91.33%;}
 	.grid_bar_12{left:99.75%;}
 
+	.container {
+		/*border: 1px solid red;*/
+	}
 	.container-left {
 		display: inline-block;
 		width: 20%;
 		margin-left: 3%;
-		overflow: overlay; 
+		overflow: hidden; 
 		clear: right;
+	    min-height: 285px;
 	}
-
 	.container-right {
 	    display: inline-block;
 	    float:right;
@@ -67,22 +68,18 @@
 	    background-color: rgb(255,238,0);
 	    padding: 1vh;
 	}
-
-
 	/* The browser, by default, colours yellow an input box when it is autofilled. Below code colours the input box
 	white always. Another way around the yellow shadow is turning autocomplete off for the form, but lets not */
 	input:-webkit-autofill {
 	    -webkit-box-shadow: 0 0 0px 1000px white inset;
 	}
-
-	input{
+	input {
 		border: 1px outset #f56c57;
 		margin-top: 1vh;
 	}
-	input:nth-of-type(2)  {
+	input:nth-of-type(2) {
 		border: 1px inset #f56c57;
 	}
-
 	input[type="submit"] {
 		color: white;
 		background-color: rgb(66, 134, 244);
@@ -104,9 +101,12 @@
 	}
 
     /* Red and black silhouettes*/
-	.uma{
+	.uma {
    	    width: 25%;
    	    clear: right;
+   	    /* ------------  */
+		/*border: 1px solid red;*/
+		/* ------------  */
 	}
 	.left {
 	    float: left;
@@ -119,18 +119,66 @@
         clear: both;
         display: table;
 	}	
-
-	#info-logo{
+	#info-logo {
 		position: relative;
     	top: 0.4em;
     	left: -10%;
+		/* ------------  */
+		/*border: 1px solid red;*/
+		/* ------------  */
+	}
+	#info-logo:hover, #info-message:hover {
+		cursor: pointer;
+		color: red;
+		transition:1s;
 	}
 	#info-message {
 	    width: 30%; 
 	    display: inline-block;
-		}
+		/* ------------  */
+		/*border: 1px solid red;*/
+		/* ------------  */
+	}
+	#info-message:not(:hover) {
+		transition:1s;
+	}
+	#info-text {
+		display: inline-flex;
+	}
+	info, cookieInfo {
+		position: absolute;
+		display: none;
 
+		/* ------------  */
+		/*border: 1px solid red;*/
+		/* ------------  */
+	}
+	info{
+		font-size: 0.95em;
+	}
+	cookieInfo{
+		font-size: 0.9em;
+	}
+	info:nth-of-type(1){
+	    top: 54px;
+   		left: 48%;
+	}
+	info:nth-of-type(2){
+		top: 81px;
+   		left: 48%;
+	}	
+	cookieInfo:nth-of-type(1){
+	    top: 167px;
+		left: 48%;
+	}
+	cookieInfo:nth-of-type(2){
+		top: 187px;
+    	left: 48%;
+	}	
 	.right-info {
+		/* ------------  */
+		/*border: 1px solid red;*/
+		/* ------------  */
 		text-align: right;
 		margin-right: 5%;
 		float: right;
@@ -153,10 +201,7 @@
 		font-size: .75em;
 
 	}
-	.gdpr-disclaimer:nth-of-type(2) {
-		top: 40vh;
-		font-size: .8em;
-	}
+	
 	#gdpr-radio {
 		top: 37vh;
 		left: 2.25%;
@@ -176,24 +221,74 @@
 @media only screen  and (max-width : 1275px) {
 	#info-logo{
 		left: -3%;
+	}#small-arrow{
+		width: 7%;
+	}info:nth-of-type(1){
+	    top: 85px;
+	}
+	
+	info:nth-of-type(2){
+		top: 105px;
 	}}
 @media only screen  and (max-width : 950px){
 	#info-logo{
 		left: 0%;
+	}info:nth-of-type(1){
+	    top: 95px;
+	}
+	
+	info:nth-of-type(2){
+		top: 115px;
 	}}
 @media only screen  and (max-width : 800px){
 	.gdpr-disclaimer{
 		width: 100%;
-	}}
-
-
-
-
+	}
+	info:nth-of-type(1){
+	    top: 105px;
+	}
+	info:nth-of-type(2){
+		top: 125px;
+	}
+	info{
+		font-size: 0.8em;
+	}
+	cookieInfo{
+		font-size: 0.75em;
+	}
+}
 
 /* Start of PHONE styles */
 
 
-/*/ iPhone 5 and 6 ----------- = /*/
+/*GALAXY S5 fix*/
+@media only screen  
+and (min-width : 360px)
+and (max-width : 362px)
+and (orientation : portrait) 
+and (-webkit-device-pixel-ratio: 3){
+	info:nth-of-type(1){
+        top: 41vh;
+  	    left: 12%;
+	}
+	info:nth-of-type(2){
+		top: 43.5vh;
+   		left: 12%;
+	}
+	cookieInfo:nth-of-type(1){
+	    top: 11vh;
+		left: 57%;
+	}
+	cookieInfo:nth-of-type(2){
+	    top: 14vh;
+    	left: 45%;
+	}
+	cookieInfo{
+		font-size: 0.7em;
+	}}
+
+
+/*/ iPhone 5 and 6  and GALAXY S3 ---------- /*/
 @media only screen 
 and (min-device-width: 320px) 
 and (max-device-height: 667px) 
@@ -221,17 +316,73 @@ and (-webkit-device-pixel-ratio: 2){
 		top: -0.7em;
 		left: -5%;
 	}
-}
+	info:nth-of-type(1){
+        top: 45vh;
+  	    left: 10%;
+	}
+	
+	info:nth-of-type(2){
+		top: 48vh;
+   		left: 10%;
+	}	
+	cookieInfo{
+		font-size: 0.7em;
+	}
+	cookieInfo:nth-of-type(1){
+	    top: 12.5vh;
+		left: 62%;
+	}
+	
+	cookieInfo:nth-of-type(2){
+	    top: 15vh;
+    	left: 51%;
+	}}
 
 @media only screen 
 and (min-device-width: 320px) 
 and (max-device-height: 768px) 
 and (orientation : landscape) 
 and (-webkit-device-pixel-ratio: 2){
+	.gdpr-disclaimer{
+		font-size: 0.7em;
+	}
 	#info-logo {
 		top: 0.5em;
+	}}
+
+/* IPHONE 6*/
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-height: 667px){
+	info:nth-of-type(1){
+        top: 40.5vh;
+  	    left: 12%;
 	}
-}
+	info:nth-of-type(2){
+        top: 43vh;
+  	    left: 12%;
+	}}
+
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-height: 667px) 
+and (orientation : landscape){
+	info:nth-of-type(1) {
+    	top: 67vh;
+    	left: 10.5%;
+	}
+	info:nth-of-type(2){
+        top: 71vh;
+  	    left: 10.5%;
+	}
+	cookieInfo:nth-of-type(1) {
+	    top: 67vh;
+	    left: 73.5%;
+	}
+	cookieInfo:nth-of-type(2) {
+	    top: 71vh;
+	    left: 67%;
+	}}
 
 
 /*/ iPhone 6+  ----------- /*/
@@ -265,6 +416,22 @@ and (orientation : portrait)
 		top: -0.7em;
 		left: -8%;
 	}
+	info:nth-of-type(1){
+        top: 37vh;
+  	    left: 12%;
+	}
+	info:nth-of-type(2){
+        top: 39vh;
+  	    left: 12%;
+	}
+	cookieInfo:nth-of-type(1) {
+    	top: 11vh;
+	    left: 60%;
+	}
+	cookieInfo:nth-of-type(2) {
+	    top: 13vh;
+    	left: 49%;
+	}
 }
 
 
@@ -273,6 +440,7 @@ and (orientation : portrait)
 @media only screen 
 and (min-device-width: 375px) 
 and (max-device-height: 812px) 
+and (orientation : portrait) 
 and (-webkit-device-pixel-ratio: 3){
 	.container{
 		width: 80%;
@@ -297,9 +465,26 @@ and (-webkit-device-pixel-ratio: 3){
 		top: -0.5em;
 		left: -7%;
 	}
+	info:nth-of-type(1){
+        top: 35vh;
+  	    left: 12%;
+	}
+	info:nth-of-type(2){
+        top: 37vh;
+  	    left: 12%;
+	}
+	cookieInfo:nth-of-type(1) {
+    	top: 11vh;
+	    left: 60%;
+	}
+	cookieInfo:nth-of-type(2) {
+	    top: 13vh;
+    	left: 49%;
+	}
 }
 
-/*/ Samsung Galaxy S5 (portrait and landscape) ----------- /*/
+/*  Samsung Galaxy S5 (portrait and landscape) ----------- /*/
+/*  There is also another fix for S5 at the start of phone styles */
 
 @media only screen 
 and (min-device-width: 360px) 
@@ -327,8 +512,9 @@ and (-webkit-device-pixel-ratio: 3){
 		width: 5%;
 		top: -0.7em;
 		left: -8%;
-	}
-}
+	}}
+
+
 @media only screen 
 and (min-device-width: 360px) 
 and (max-device-height: 640px) 
@@ -336,16 +522,14 @@ and (orientation : landscape)
 and (-webkit-device-pixel-ratio: 3){
 	#info-logo {
 		top: 0.5em;
-	}
-}
-
+	}}
 
 
 /* iPads (portrait and landscape) ----------- */
 
 @media only screen 
 and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
+and (max-device-width : 1024px){
 	#info-logo {
     left: -5%;
     top: -0.5em;
@@ -356,8 +540,8 @@ and (max-device-width : 1024px) {
     }
     .right-info{
     	margin-right: 0%;
-    }
-}
+    }}
+
 @media only screen 
 and (min-device-width : 768px) 
 and (max-device-width : 1024px) 
@@ -365,19 +549,17 @@ and (orientation : landscape) {
 	#info-logo {
     left: -5%;
     top: 0.5em;
-	}
-}
+	}}
 
 
-/*IPHONE X (landscape) */
+/*IPHONE X small arrow fix (landscape) */
 @media only screen 
 and (min-device-width: 375px) 
 and (max-device-height: 812px) 
 and (orientation : landscape)
-and (-webkit-device-pixel-ratio: 3) {
+and (-webkit-device-pixel-ratio: 3){
 	#small-arrow {
     width: 4%;
     top: 4px;
-	}
-}
+	}}
 

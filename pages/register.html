@@ -30,8 +30,8 @@
 		  <div class='grid grid_bar_11'></div>
 		  <div class='grid grid_bar_12'></div>
 
-		  <!-- INPUT FORMS & GDPR TEXT -->
-		  <container class='container container-left clearfix'>
+		  <!--  INPUT FORMS & GDPR TEXT CONTAINER  -->
+		  <div class='container container-left clearfix'>
 			  <form action = "" target = "dummyframe">         
 			   		<input type = "text" placeholder = "Username" id = "username" name = "_username" required />
 			   		<br/>
@@ -39,25 +39,34 @@
 	               
 					<input id = "submit" type = "submit" value = "Register">
 			  </form>
-			  <p class='gdpr-disclaimer'>This site requires cookies to function properly. To continue registering you must consent to our <a>Cookie & Privacy policies</a>.</p>
+			  <p class='gdpr-disclaimer'>This site requires cookies to function properly. By clicking register you consent to our <a id='gdpr-link'>Cookie & Privacy policies</a>.</p>
 	       	  <input type = "radio" name = "gdpr" id = "gdpr-radio" value = "false"> 
 	       	  <img id='small-arrow' src="../assets/images/register/small_arrow.png"  alt="small_arrow"
 			  </br>
-			  <P class='gdpr-disclaimer'>You can <a>opt-out</a> at any time.</P>
-		  </container>
+			  <P class='gdpr-disclaimer'>You can <a id='opt-out'>opt-out</a> at any time.</P>
+		  </div>
 
-		  <!-- CONTAINER -->
-		  <container class='container container-right clearfix'>
+		  <!-- PICS CONTAINER -->
+		  <div class='container container-right clearfix'>
 		 	<p id='info-message'>Register as a producer</p>
 		 	<img id='info-logo' src="../assets/images/register/logo.png"  alt="info_logo">
 			<p id='info-message' class='right-info'>Already a producer?</p>
 
 		    <img class="uma left"  src="../assets/images/register/left.png"  alt="uma_thurman_black_silhouette">
+
+		    <div id = 'info-text'>
+		    	<info>Registered producers can</info>
+		    	<info>add, edit and delete movies.</info>
+		    	<cookieInfo>Cookies identify user</cookieInfo>
+		    	<cookieInfo>and colect no data otherwise.</cookieInfo>
+
+		    </div>
+
 		    <img class="uma right" src="../assets/images/register/right.png" alt="uma_thurman_red_silhouette">
 
 		    <!-- this iframe is targeted by form above-->
 		    <iframe width="0" height="0" border="0" name="dummyframe"></iframe>
-		  </container>
+		  </div>
 
 
 		</wrapper>
