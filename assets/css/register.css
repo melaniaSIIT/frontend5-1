@@ -283,18 +283,18 @@ and (orientation : portrait)
 and (-webkit-device-pixel-ratio: 3){
 	info:nth-of-type(1){
         top: 41vh;
-  	    left: 12%;
+  	    left: 10%;
 	}
 	info:nth-of-type(2){
 		top: 43.5vh;
-   		left: 12%;
+   		left: 10%;
 	}
 	cookieInfo:nth-of-type(1){
-	    top: 11vh;
+	    top: 13.5vh;
 		left: 57%;
 	}
 	cookieInfo:nth-of-type(2){
-	    top: 14vh;
+	    top: 15.5vh;
     	left: 45%;
 	}
 	cookieInfo{
@@ -344,12 +344,12 @@ and (-webkit-device-pixel-ratio: 2){
 		font-size: 0.7em;
 	}
 	cookieInfo:nth-of-type(1){
-	    top: 12.5vh;
+	    top: 7.25em;
 		left: 62%;
 	}
 	
 	cookieInfo:nth-of-type(2){
-	    top: 15vh;
+	    top: 8.5em;
     	left: 51%;
 	}}
 
@@ -371,11 +371,11 @@ and (min-device-width: 375px)
 and (max-device-height: 667px){
 	info:nth-of-type(1){
         top: 42.5vh;
-  	    left: 12%;
+  	    left: 10%;
 	}
 	info:nth-of-type(2){
         top: 45vh;
-  	    left: 12%;
+  	    left: 10%;
 	}}
 
 @media only screen 
@@ -483,18 +483,18 @@ and (-webkit-device-pixel-ratio: 3){
 	}
 	info:nth-of-type(1){
         top: 40vh;
-  	    left: 12%;
+  	    left: 10%;
 	}
 	info:nth-of-type(2){
         top: 42.5vh;
-  	    left: 12%;
+  	    left: 10%;
 	}
 	cookieInfo:nth-of-type(1) {
-    	top: 11vh;
+    	top: 7.5em;
 	    left: 60%;
 	}
 	cookieInfo:nth-of-type(2) {
-	    top: 13vh;
+	    top: 8.75em;
     	left: 49%;
 	}
 }
