@@ -66,7 +66,8 @@
 	    width: 67.5%;
 	    margin-right: 8%;
 	    background-color: rgb(255,238,0);
-	    padding: 1vh;
+	    padding-top: 1vh;
+	    padding-bottom: 1vh;
 	}
 	/* The browser, by default, colours yellow an input box when it is autofilled. Below code colours the input box
 	white always. Another way around the yellow shadow is turning autocomplete off for the form, but lets not */
@@ -264,13 +265,15 @@
 
 /* Horizontal separator bar in portrait mode */
 @media only screen  
-and (max-width : 700px)
+and (max-width : 521px)
 and (orientation : portrait){
    .container-right{
    		border-top: 1px solid rgba(66, 134, 244, 0.5);
    	} 
 
 } 
+
+
 
 /*GALAXY S5 fix*/
 @media only screen  
@@ -329,12 +332,12 @@ and (-webkit-device-pixel-ratio: 2){
 		left: -5%;
 	}
 	info:nth-of-type(1){
-        top: 48vh;
+        top: 21.5em;
   	    left: 10%;
 	}
 	
 	info:nth-of-type(2){
-		top: 51vh;
+		top: 23em;
    		left: 10%;
 	}	
 	cookieInfo{
@@ -583,6 +586,78 @@ and (min-device-width : 1024px)
 and (max-device-width : 1025px)
 and (orientation : portrait){
 	#info-logo {
-    left: -3%;
+   	left: -3%;
     top: 0.5em;
 	}}
+
+/* NEXUS 7 fix */
+@media only screen  
+and (min-width : 960px)
+and (max-width: 961px)
+and (orientation : landscape){
+	info:nth-of-type(1) {
+	    top: 48vh;
+	    left: 10%;
+	}
+	info:nth-of-type(2) {
+	    top: 51vh;
+  	    left: 10%;
+	}
+	cookieInfo:nth-of-type(1) {
+	    top: 5vh;
+	    left: 53.5%;
+	}
+	cookieInfo:nth-of-type(2) {
+	    top: 8vh;
+	    left: 49%;
+	}
+	#small-arrow {
+	    width: 25px;
+	    top: 4px;
+	}
+	#info-logo {
+        width: 3%;
+		left: -20%;
+		top: 6px;
+	}}
+
+@media only screen  
+and (min-width : 600px)
+and (max-width: 601px)
+and (orientation : portrait){
+	.container {
+		width: 80%;
+	}
+	.container-left {
+		display: block;
+		margin: 0 auto;
+	}
+	.container-right {
+		display: block;
+		margin-right: 10%;
+	}
+	#info-logo {
+	    left: -7%;
+	    top: -8px;
+	}
+	#small-arrow {
+	    width: 6%;
+	    top: 5px;
+	}
+	info:nth-of-type(1) {
+	    top: 22.5em;
+	    left: 10%;
+	}
+	info:nth-of-type(2) {
+	    top: 24em;
+	    left: 10%;
+	}
+	cookieInfo:nth-of-type(1) {
+	    top: 24em;
+	    left: 70%;
+	}
+	cookieInfo:nth-of-type(2) {
+	    top: 25.5em;
+	    left: 63%;
+	}
+}
