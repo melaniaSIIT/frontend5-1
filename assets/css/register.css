@@ -258,8 +258,19 @@
 	}
 }
 
+
+
 /* Start of PHONE styles */
 
+/* Horizontal separator bar in portrait mode */
+@media only screen  
+and (max-width : 700px)
+and (orientation : portrait){
+   .container-right{
+   		border-top: 1px solid rgba(66, 134, 244, 0.5);
+   	} 
+
+} 
 
 /*GALAXY S5 fix*/
 @media only screen  
@@ -297,6 +308,7 @@ and (-webkit-device-pixel-ratio: 2){
 		width: 80%;
 	}
 	.container-right{
+		margin-top: 4vh;
 		margin-right: 10%;
 	}
 	.container-left{
@@ -317,12 +329,12 @@ and (-webkit-device-pixel-ratio: 2){
 		left: -5%;
 	}
 	info:nth-of-type(1){
-        top: 45vh;
+        top: 48vh;
   	    left: 10%;
 	}
 	
 	info:nth-of-type(2){
-		top: 48vh;
+		top: 51vh;
    		left: 10%;
 	}	
 	cookieInfo{
@@ -355,11 +367,11 @@ and (-webkit-device-pixel-ratio: 2){
 and (min-device-width: 375px) 
 and (max-device-height: 667px){
 	info:nth-of-type(1){
-        top: 40.5vh;
+        top: 42.5vh;
   	    left: 12%;
 	}
 	info:nth-of-type(2){
-        top: 43vh;
+        top: 45vh;
   	    left: 12%;
 	}}
 
@@ -446,6 +458,7 @@ and (-webkit-device-pixel-ratio: 3){
 		width: 80%;
 	}
 	.container-right{
+		margin-top: 8vh;
 		margin-right: 10%;
 	}
 	.container-left{
@@ -466,11 +479,11 @@ and (-webkit-device-pixel-ratio: 3){
 		left: -7%;
 	}
 	info:nth-of-type(1){
-        top: 35vh;
+        top: 40vh;
   	    left: 12%;
 	}
 	info:nth-of-type(2){
-        top: 37vh;
+        top: 42.5vh;
   	    left: 12%;
 	}
 	cookieInfo:nth-of-type(1) {
