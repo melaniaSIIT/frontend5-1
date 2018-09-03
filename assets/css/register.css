@@ -127,19 +127,19 @@
 		/*border: 1px solid red;*/
 		/* ------------  */
 	}
-	#info-logo:hover, #info-message:hover {
+	#info-logo:hover, .info-message:hover {
 		cursor: pointer;
 		color: red;
 		transition:1s;
 	}
-	#info-message {
+	.info-message {
 	    width: 30%; 
 	    display: inline-block;
 		/* ------------  */
 		/*border: 1px solid red;*/
 		/* ------------  */
 	}
-	#info-message:not(:hover) {
+	.info-message:not(:hover) {
 		transition:1s;
 	}
 	#info-text {
@@ -159,11 +159,11 @@
 	}
 	
 	info:nth-of-type(1){
-	    top: 54px;
+	    top: 150px;
    		left: 48%;
 	}
 	info:nth-of-type(2){
-		top: 81px;
+		top: 175px;
    		left: 48%;
 	}	
 	
@@ -216,11 +216,11 @@
 	}#small-arrow{
 		width: 7%;
 	}info:nth-of-type(1){
-	    top: 85px;
+	    top: 150px;
 	}
 	
 	info:nth-of-type(2){
-		top: 105px;
+		top: 175px;
 	}}
 @media only screen  and (max-width : 950px){
 	#info-logo{
@@ -299,15 +299,15 @@ and (-webkit-device-pixel-ratio: 2){
 	.gdpr-disclaimer{
 		line-height: 1.5em;
 	}
-	#info-message {
+	.info-message {
 		font-size: 0.85em;
 	    width: 40%; 
 	    display: inline-block;
 	}
 	#info-logo {
-		width: 5%;
+		width: 5.5%;
 		top: -0.7em;
-		left: -5%;
+		left: -7.5%;
 	}
 	info:nth-of-type(1){
         top: 21.5em;
@@ -381,7 +381,7 @@ and (orientation : portrait)
 	.gdpr-disclaimer{
 		line-height: 1.5em;
 	}
-	#info-message {
+	.info-message {
 		font-size: 0.85em;
 	    width: 40%; 
 	    display: inline-block;
@@ -424,7 +424,7 @@ and (-webkit-device-pixel-ratio: 3){
 	.gdpr-disclaimer{
 		line-height: 1.5em;
 	}
-	#info-message {
+	.info-message {
 		font-size: 0.85em;
 	    width: 40%; 
 	    display: inline-block;
@@ -432,7 +432,7 @@ and (-webkit-device-pixel-ratio: 3){
 	#info-logo {
 		width: 7%;
 		top: -0.5em;
-		left: -7%;
+		left: -11%;
 	}
 	info:nth-of-type(1){
         top: 40vh;
@@ -464,15 +464,15 @@ and (max-device-height: 640px)
 		line-height: 1.5em;
 	}
 	
-	#info-message {
+	.info-message {
 		font-size: 0.85em;
 	    width: 40%; 
 	    display: inline-block;
 	}
 	#info-logo {
-		width: 5%;
-		top: -0.7em;
-		left: -8%;
+    	width: 21px;
+        top: 5px;
+        left: -30px;
 	}
 	info:nth-of-type(1) {
 	    top: 41vh;
@@ -522,7 +522,7 @@ and (-webkit-device-pixel-ratio: 3){
 		line-height: 1.5em;
 	}
 	
-	#info-message {
+	.info-message {
 		font-size: 0.85em;
 	    width: 40%; 
 	    display: inline-block;
@@ -549,10 +549,14 @@ and (-webkit-device-pixel-ratio: 3){
 
 @media only screen 
 and (min-device-width : 768px) 
-and (max-device-width : 1024px){
+and (max-device-width : 1024px)
+and (min-device-height : 376px){
 	#info-logo {
-    left: -5%;
+    left: -7.5%;
     top: -0.5em;
+	}
+	.left, .left-info{
+		margin-left: 2%;
 	}
 	#small-arrow {
     width: 10%;
@@ -567,7 +571,7 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px) 
 and (orientation : landscape) {
 	#info-logo {
-    left: -5%;
+    left: -4%;
     top: 0.5em;
 	}}
 
@@ -647,5 +651,57 @@ and (orientation : portrait){
 	    top: 24em;
 	    left: 10%;
 	}
-	
 }
+
+/* PIXEL 2 FIX*/
+@media only screen  
+and (min-width : 411px)
+and (max-width: 420px)
+and (orientation : portrait){
+	.container{
+		width: 80%;
+	}
+	.container-right{
+		margin-top: 4vh;
+		margin-right: 10%;
+	}
+	.container-left{
+		display: block;
+		margin: 0 auto;
+	}
+	.info-message {
+		font-size: 0.85em;
+	    width: 40%; 
+	    display: inline-block;
+	}
+	#info-logo {
+		width: 6%;
+		top: -10px;
+		left: -14%;
+	}
+	info:nth-of-type(1) {
+	    top: 22.5em;
+	    left: 10%;
+	}
+	info:nth-of-type(2) {
+	    top: 24em;
+	    left: 10%;
+	}}
+@media only screen  
+and (min-width : 823px)
+and (max-width: 824px)
+and (orientation : landscape){
+	.left, .left-info {
+    		margin-left: 0%;
+	}
+	#small-arrow {
+    		width: 6%;
+    		top: 10px;
+	}
+	.info-message {
+			font-size: 1em;
+	}
+}
+
+
+

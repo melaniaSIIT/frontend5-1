@@ -44,10 +44,15 @@ function domLoaded() {
 	$('#info-logo').click(function(){
 		$('info').css('display','inline-block');
 	})
-	$('#info-message').click(function(){
+	$('.left-info').click(function(){
 		$('info').css('display','inline-block');
 		moveArrow();
 	})
+	$('.right-info').click(function(){
+		// go to login page
+		location.reload();
+	})
+
 	$('#gdpr-link').click(function(){
 		// $('.cookieInfo').css('visibility','visible');
 		// location.reload();
