@@ -49,10 +49,8 @@ function domLoaded() {
 		moveArrow();
 	})
 	$('#gdpr-link').click(function(){
-		$('cookieInfo').css('display','inline-block');
-	})
-	$('#opt-out').click(function(){
-		location.reload();
+		// $('.cookieInfo').css('visibility','visible');
+		// location.reload();
 	})
 	
 	// Moves small arrow @gdpr to alert user
