@@ -69,6 +69,8 @@ window.addEventListener("load", function() {
       liEl.appendChild(imgEl);
       liEl.appendChild(editBtn);
       liEl.appendChild(deleteBtn);
+
+      liEl.setAttribute("class", "movie");
      
       containerElement.appendChild(liEl);
       
