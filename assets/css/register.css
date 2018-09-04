@@ -702,6 +702,47 @@ and (orientation : landscape){
 			font-size: 1em;
 	}
 }
+@media only screen  
+and (min-width : 421px)
+and (max-width: 443px)
+and (orientation : portrait){
+	#info-logo {
+		top: -8px;
+    	left: -45px;
+	}
+}
+
+@media only screen  
+and (min-width : 361px)
+and (max-width: 411px)
+and (orientation : portrait){
+	#info-logo {
+		top: -8px;
+   		left: -40px;
+	}
+}
+
+@media only screen  
+and (min-width : 442px)
+and (max-width: 552px)
+and (orientation : portrait){
+	.info-message{
+		width: 35%;
+	}
+	#info-logo {
+		top: -8px;
+    	left: -40px;
+	}
+}
+
+@media only screen  
+and (min-width : 507px)
+and (max-width: 552px){
+	#info-logo {
+		top: 5px;
+    	left: 0px;
+	}
+}
 
 
 
