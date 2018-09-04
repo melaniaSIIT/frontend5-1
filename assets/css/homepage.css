@@ -81,15 +81,19 @@ and (max-device-width : 1024px) {
 
 
 body {
-   background-color: #cccccc;
+    background-image: url("http://www.publicdomainpictures.net/pictures/30000/velka/film-background-1334067869u9d.jpg");
+	height: 100%;
+	background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
 }
 
 
-
 #title {
-	font-size: 50px;
+	font-size: 70px;
 	text-align: center;
 	font-family: chiller;
+	color: white;
 }
 
 
@@ -101,19 +105,6 @@ body, html {
   box-sizing: border-box;
 }
 
-.bg-img {
-  /* The image used */
-  background-image: url("img_nature.jpg");
-
-  /* Control the height of the image */
-  min-height: 380px;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
 
 /* Add styles to the form container */
 .container {
@@ -196,7 +187,7 @@ body, html {
 
 /* Style the "active" element to highlight the current page */
 .topnav a.active {
-    background-color: #2196F3;
+    background-color: black;
     color: white;
 }
 
