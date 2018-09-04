@@ -6,12 +6,11 @@ function Movie(options) {
     this.posterUrl = options.Poster;
     this.rating = options.imdbRating;
     this.votes = options.imdbVotes;
-    this.description = options.Plot;
   }
   
   Movie.prototype.getMovieDetails = function() {
     var that = this;
-    return $.get("https://ancient-caverns-16784.herokuapp.com/movies" + this.id)
+    return $.get("https://ancient-caverns-16784.herokuapp.com/movies/" + this.id)
       .then(function(response) {
         that.id = response._id;
         that.title = response.Title;

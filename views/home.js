@@ -3,8 +3,8 @@ window.addEventListener("load", function() {
     
     let moviesModel = new Movies();
     moviesModel.getAll().then(function(response) {
-      displayAllMovies(response);
-      console.log(response);
+      displayAllMovies(response.results);
+      console.log(response.results);
     });
     
     function displayAllMovies(moviesData) {
