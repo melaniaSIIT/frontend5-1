@@ -3,6 +3,7 @@ function Movie(options) {
     this.id = options._id;
     this.title = options.Title;
     this.genre = options.Genre;
+    this.year = options.Year;
     this.posterUrl = options.Poster;
     this.rating = options.imdbRating;
     this.votes = options.imdbVotes;

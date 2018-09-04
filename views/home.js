@@ -8,10 +8,9 @@ window.addEventListener("load", function() {
     });
     
     function displayAllMovies(moviesData) {
-      for (let i = 0; i <= 10; i++) {
+      for (let i = 0; i < moviesData.length; i++) {
         let movie = new Movie(moviesData[i]);
         displayMovie(movie);
-        console.log("Movie data", movie);
       }
     }
     
@@ -27,7 +26,7 @@ window.addEventListener("load", function() {
       });
           
       titleEl.addEventListener("click", function() {
-        window.location = "https://ancient-caverns-16784.herokuapp.com/movies/" + movie.id;
+        window.location = "../pages/movieDetails.html?movieId=" + movie.id;
       });
       
       let imgEl = document.createElement('img');
@@ -39,7 +38,13 @@ window.addEventListener("load", function() {
         imgEl.style.display = "block";
       
       let bodyEl = document.createElement('p');
-      bodyEl.innerHTML = movie.description;
+      bodyEl.innerHTML = "Genre: " + movie.genre;
+
+      let yearEl = document.createElement('p');
+      yearEl.innerHTML = "Year: " + movie.year;
+
+      let ratingEl = document.createElement('p');
+      ratingEl.innerHTML = "IMDB Rating: " + movie.rating;
       
       let idEl = document.createElement('p');
       idEl.innerHTML = movie.id;
@@ -59,6 +64,8 @@ window.addEventListener("load", function() {
         
       liEl.appendChild(titleEl);
       liEl.appendChild(bodyEl);
+      liEl.appendChild(yearEl);
+      liEl.appendChild(ratingEl);
       liEl.appendChild(imgEl);
       liEl.appendChild(editBtn);
       liEl.appendChild(deleteBtn);
