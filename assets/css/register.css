@@ -713,7 +713,7 @@ and (orientation : portrait){
 }
 
 @media only screen  
-and (min-width : 361px)
+and (min-width : 360px)
 and (max-width: 411px)
 and (orientation : portrait){
 	#info-logo {
