@@ -44,15 +44,18 @@ function domLoaded() {
 	$('#info-logo').click(function(){
 		$('info').css('display','inline-block');
 	})
-	$('#info-message').click(function(){
+	$('.left-info').click(function(){
 		$('info').css('display','inline-block');
 		moveArrow();
 	})
-	$('#gdpr-link').click(function(){
-		$('cookieInfo').css('display','inline-block');
-	})
-	$('#opt-out').click(function(){
+	$('.right-info').click(function(){
+		// go to login page
 		location.reload();
+	})
+
+	$('#gdpr-link').click(function(){
+		// $('.cookieInfo').css('visibility','visible');
+		// location.reload();
 	})
 	
 	// Moves small arrow @gdpr to alert user
