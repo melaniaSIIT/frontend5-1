@@ -13,12 +13,31 @@
   <script type="text/javascript" src="../views/movieDetails.js"></script>
   <script type="text/javascript" src="../views/login.js"></script>
   <script type="text/javascript" src="../views/register.js"></script>
-  <link rel="stylesheet" href="../assets/css/movieDetails.css" type="text/css">
+  <link rel="stylesheet" href="../assets/css/singleMovie.css" type="text/css">
  
 </head>
 <body>
-    <ul id="movie-details">
+  <div class="topnav">
+    <a class="active" href="#home">Home</a>
+    <a class="active" href="#home">Login</a>
+    <a class="active" href="#home">Register</a>
+    <input type="text" placeholder="Search..">
+  </div>
 
-    </ul>
+  <h1 id="title">Movies</h1>
+  <article>
+    <section>
+        <ul id="movie-details"> </ul>
+    </section>
+  </article>
+
+  <aside>
+      <div id="asideSection"></div>
+      <div class="rating">
+        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+      </div>
+  </aside>
+  
+  <div class="clear"></div>
 </body>
 </html>
