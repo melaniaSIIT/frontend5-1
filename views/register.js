@@ -1,4 +1,4 @@
-
+ 
 $(domLoaded)
 
 function domLoaded() {
@@ -57,6 +57,13 @@ function domLoaded() {
 		// $('.cookieInfo').css('visibility','visible');
 		// location.reload();
 	})
+
+	$('#home').click(function(){
+          window.location = "../pages/home.html";
+        })
+	 $('#login').click(function(){
+     	  window.open("../pages/login.html","_self");
+        });
 	
 	// Moves small arrow @gdpr to alert user
 	function moveArrow(){

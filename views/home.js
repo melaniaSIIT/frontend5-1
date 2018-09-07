@@ -1,6 +1,9 @@
 window.addEventListener("load", function() {
+
+
+
     let containerElement = document.getElementById("movies-list");
-    
+
     let moviesModel = new Movies();
     moviesModel.getAll().then(function(response) {
       displayAllMovies(response.results);
@@ -75,5 +78,15 @@ window.addEventListener("load", function() {
       containerElement.appendChild(liEl);
       
     }
-  
+    
+
+    // TOPNAV click listeners
+
+    $('#register').click(function(){
+      window.open("../pages/register.html","_self");
+    });
+     $('#login').click(function(){
+      window.open("../pages/login.html","_self");
+    });
+
   });

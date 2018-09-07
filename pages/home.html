@@ -5,27 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Homepage</title>
   <style>@import url('https://fonts.googleapis.com/css?family=Open+Sans');</style>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="../views/home.js"></script>
   <script type="text/javascript" src="../models/MovieList.js"></script>
   <script type="text/javascript" src="../models/Movie.js"></script>
   <script type="text/javascript" src="../views/login.js"></script>
   <script type="text/javascript" src="../views/register.js"></script>
+  <link rel="stylesheet" href="../assets/css/reset.css" type="text/css">
   <link rel="stylesheet" href="../assets/css/homepage.css" type="text/css">
- 
+
 </head>
 <body>
 
-
-
-
-
 <div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a class="active" href="#home">Login</a>
-  <a class="active" href="#home">Register</a>
+  <a class="active" id="home" href="#home">Home</a>
+  <a class="active" id="register">Register</a>
+  <a class="active" id="login">Login</a>
   <input type="text" placeholder="Search..">
 </div>
 

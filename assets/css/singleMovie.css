@@ -86,6 +86,7 @@ and (max-device-width : 1024px) {
 
 body {
     background-color: grey;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #title {
@@ -93,12 +94,18 @@ body {
 	text-align: center;
 	font-family: chiller;
 	color: white;
+    margin-top: 0.435em;
+    margin-bottom: 0.5em;
 }
+
+
 
 /* Add a black background color to the top navigation bar */
 .topnav {
     overflow: hidden;
-    background-color: #e9e9e9;
+    background-color: rgba(233,233,233, 0.85);
+    width: 100%;
+    margin-bottom: 5vh;
 }
 
 /* Style the links inside the navigation bar */
@@ -111,8 +118,9 @@ body {
     text-decoration: none;
     font-size: 17px;
     margin: 6px;
-    cursor: pointer;
+    min-width: 7em;
 }
+
 
 /* Change the color of links on hover */
 .topnav a:hover {
@@ -126,6 +134,17 @@ body {
     color: white;
 }
 
+.topnav a.active:nth-of-type(1) {
+    margin-left: 3%;
+  }
+.topnav a.active:nth-of-type(2) {
+    float: right;
+    margin-right: 22px;
+}
+.topnav a.active:nth-of-type(3) {
+    float: right;
+}
+
 /* Style the search box inside the navigation bar */
 .topnav input[type=text] {
     float: right;
@@ -134,7 +153,7 @@ body {
     margin-top: 8px;
     margin-right: 16px;
     font-size: 17px;
-	    margin: 13px;
+	margin: 13px;
 }
 
 .actionButtonClass {
@@ -163,17 +182,21 @@ article {
     background-size: 100%;
     border: 3px solid #262626;
     font-size: 20px;
+    margin-left: 3%;
 }
 
 aside {
     background-color: #BDBDBD;
     background-size: 100%;
     float: right;
-    width: 40%;
+    width: 37%;
     padding: 1px;
+    padding-top: 0.5em;
     border: 3px solid #262626;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
+    min-height: 3em;
+    margin-right: 3%;
 }
 
 #movieTitleId {
