@@ -59,6 +59,9 @@
 	}
 	.topnav a.active:nth-of-type(1) {
 	    margin-left: 3%;
+	    position: relative;
+	    top:-0.5px;
+	    left: -0.5px;
 	}
 	.grid{
 		position: absolute;

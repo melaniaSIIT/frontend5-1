@@ -96,7 +96,7 @@ body {
 	font-size: 70px;
 	text-align: center;
 	color: white;
-  margin-top: 1.35em;
+  margin-top: 1.75em;
   margin-left:16px;
 }
 
@@ -173,11 +173,6 @@ li{
   border: none;
   background: #f1f1f1;
 }
-
-
-
-
-
 
 /* Set a style for the submit button */
 .btn {
@@ -262,7 +257,7 @@ button {
 
 
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 567px) {
     .topnav a, .topnav input[type=text] {
         float: none;
         display: block;
@@ -270,8 +265,43 @@ button {
         width: 100%;
         margin: 0;
         padding: 14px;
+        font-size: 14px;
     }
     .topnav input[type=text] {
         border: 1px solid #ccc;
     }
+    .topnav a.active:nth-of-type(1) {
+        margin-left: 0;
+    } 
+    .topnav a.active{
+        float:left;
+        width: 50%;
+        display: block;
+        clear: both;
+        border-bottom: 1px solid white;
+    } 
+    .topnav a.active:nth-of-type(2) {
+        float: left;
+    }
+    .topnav a.active:nth-of-type(3) {
+        float: left;
+        border-bottom: none;
+    }
+    #title {
+        margin-top: 3em;
+    }
+    p{
+        width: 45%;
+        font-size: 0.8em;
+        text-align: left;
+    }
+    h1{
+        width: 85%;
+        text-align: left;
+    }
+    img {
+        width: 40%;
+        top: -5.3em;
+    }
+
 }
