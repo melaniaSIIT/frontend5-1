@@ -62,18 +62,28 @@ window.addEventListener("load", function() {
       }
     });
 
+    // TOPNAV click listeners
 
-    /**
-       * It retrieves a query (URL) parameter value
-       * 
-       * It expects you to send the parameter key(before '=')
-        */
-      function getUrlParameter(name) {
-          name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-          var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-          var results = regex.exec(location.search);
-          return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-      }
-  });
+    $('#register').click(function(){
+      window.open("../pages/register.html","_self");
+    });
+     $('#login').click(function(){
+      window.open("../pages/login.html","_self");
+    });
+
+
+
+  /**
+     * It retrieves a query (URL) parameter value
+     * 
+     * It expects you to send the parameter key(before '=')
+      */
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+});
 
 
