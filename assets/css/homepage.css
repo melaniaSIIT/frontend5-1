@@ -95,7 +95,6 @@ body {
 #title {
 	font-size: 70px;
 	text-align: center;
-	font-family: chiller;
 	color: white;
   margin-top: 1.35em;
   margin-left:16px;
@@ -106,8 +105,34 @@ body, html {
   height: 100%;
 }
 
+img {
+  float: right;
+  width: 15%;
+  height: auto;
+  position: relative;
+  display:inline-block;
+  top: -10em;
+  margin-right: 5%;
+  z-index: -1;
+}
 
-/*change (only works in CHROME*/
+ol, ul{
+  margin-left: 3%;
+  font-size: 0.8em;
+  position: relative;
+  z-index: -1;
+}
+
+li{
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  padding-top: 5vh;
+  padding-bottom: 18vh;
+  border-bottom: 2px solid rgba(255,255,255,0.3);
+}
+
+
+/*change scrollbar (only works in CHROME)*/
 ::-webkit-scrollbar {
   color: #fff;
     width: 16px; 
@@ -150,17 +175,6 @@ body, html {
 }
 
 
-ol, ul{
-  margin-left: 3%;
-  font-size: 0.8em;
-}
-
-li{
-  margin-top: 10vh;
-  margin-bottom: 2vh;
-  padding-bottom: 2vh;
-  border-bottom: 2px solid rgba(255,255,255,0.3);
-}
 
 
 
@@ -237,6 +251,14 @@ li{
     font-size: 17px;
 	  margin: 13px;
 }
+button {
+  margin-right: 10px;
+  background-color: #fff;
+  border: none;
+  font-weight: 700;
+  padding: 6px 7px 6px 7px;
+}
+
 
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
 @media screen and (max-width: 600px) {

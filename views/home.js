@@ -38,7 +38,6 @@ window.addEventListener("load", function() {
           "height":"200",
           "alt":"Movie Image here",
         });  
-        imgEl.style.display = "block";
       
       let bodyEl = document.createElement('p');
       bodyEl.innerHTML = "Genre: " + movie.genre;
@@ -56,13 +55,11 @@ window.addEventListener("load", function() {
       editBtn.innerHTML = "   Edit   ";
       editBtn.setAttribute("id", "edit-" + movie.id);
       editBtn.setAttribute("name", "Edit");
-      editBtn.style.margin = "10px";
   
       let deleteBtn = document.createElement('button');
       deleteBtn.innerHTML = "  Delete  ";
       deleteBtn.setAttribute("id", "delete-" + movie.id);
       deleteBtn.setAttribute("name", "Delete");
-      deleteBtn.style.margin = "10px";
            
         
       liEl.appendChild(titleEl);
