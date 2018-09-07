@@ -85,7 +85,14 @@ and (max-device-width : 1024px) {
   }
 
 body {
-    background-color: grey;
+    background-image: url("../images/film-background.jpg");
+    background-repeat: no-repeat;
+	  height: 100%;
+	  background-position: center;
+    background-attachment: fixed;
+    z-index: -3;
+    color: #fff;
+    font-size: 1.5em;
     font-family: 'Open Sans', sans-serif;
 }
 
