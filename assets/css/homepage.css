@@ -305,3 +305,22 @@ button {
     }
 
 }
+
+#addMovieButton {
+  position: fixed;
+  bottom: 0;
+  margin: auto;
+  left:50%;
+  right:0;
+}
+
+form {
+  display: none;
+  border: solid 1px white;
+  border-radius: 5px;
+  position: center;
+  padding: 20px;
+  width: 300px;
+  font-size: 14px;
+  margin: 10px;
+}
