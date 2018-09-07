@@ -314,3 +314,14 @@ aside {
     }
 
 }
+
+body {
+    background-image: url("http://www.publicdomainpictures.net/pictures/30000/velka/film-background-1334067869u9d.jpg");
+    background-repeat: no-repeat;
+	  height: 100%;
+	  background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    font-size: 1.5em;
+    font-family: 'Open Sans', sans-serif;
+}
