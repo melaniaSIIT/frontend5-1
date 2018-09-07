@@ -120,7 +120,7 @@ ol, ul{
   margin-left: 3%;
   font-size: 0.8em;
   position: relative;
-  z-index: -1;
+  z-index: 0;
 }
 
 li{
@@ -202,6 +202,7 @@ li{
     position: fixed;
     width: 100%;
     top: 0px;
+    z-index: 1;
 }
 
 /* Style the links inside the navigation bar */
