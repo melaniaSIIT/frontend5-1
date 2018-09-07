@@ -81,11 +81,12 @@ and (max-device-width : 1024px) {
 
 
 body {
-    background-image: url("http://www.publicdomainpictures.net/pictures/30000/velka/film-background-1334067869u9d.jpg");
+    background-image: url("../images/film-background.jpg");
     background-repeat: no-repeat;
 	  height: 100%;
 	  background-position: center;
     background-attachment: fixed;
+    z-index: -3;
     color: #fff;
     font-size: 1.5em;
     font-family: 'Open Sans', sans-serif;
