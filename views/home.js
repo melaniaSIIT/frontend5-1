@@ -55,6 +55,11 @@ window.addEventListener("load", function() {
       editBtn.innerHTML = "   Edit   ";
       editBtn.setAttribute("id", "edit-" + movie.id);
       editBtn.setAttribute("name", "Edit");
+
+      //Edit Event
+      editBtn.addEventListener("click", function(){
+        window.location = "../pages/movieDetails.html?movieId=" + movie.id + "&edit=true";
+      })
   
       let deleteBtn = document.createElement('button');
       deleteBtn.innerHTML = "  Delete  ";
