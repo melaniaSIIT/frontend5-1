@@ -93,46 +93,12 @@ window.addEventListener("load", function() {
 
     // SEARCH MOVIE
  
-  var getShowsFilm = function(query) {
-  $.ajax({
-    url: "https://ancient-caverns-16784.herokuapp.com/"  + query,
-    method: "GET",
-    success: manageData
-    })
-  }
-  
-   $('#invoke-ajax').on('click', function() {
-    var query = $(`#search`).val()
-    getShowsFilm(query)
-  })  
-  
-  
-  
-  function manageData (data, textStatus, jqXHR) { 
-    $(".container").html(renderHtml(data)) 
-    console.log('data', data)
-  }
-
-  function renderHtml(data) {
-    var html;
-     for (i = 0; i < data.length; i++) { 
-       var _id = data[i].results._id;
-       var Title = data[i].results.Title;
-       var Year = data[i].results.Year;
-       var Runtime = data[i].results.Runtime;
-       var Genre = data[i].results.Genre;
-       var Language = data[i].results.Language;
-       var Country = data[i].results.Country;
-       var Poster = data[i].results.Poster;
-       var imdbRating = data[i].results.imdbRating;
-       var imdbVotes = data[i].results.imdbVotes;
-       var imdbID = data[i].results.imdbID;
-       var Type = data[i].results.Type;
-
- 
-       html += `<li>` + name + " - " + score + " - " + `<a href=` + url + `>` + url + `</a>` + `</li>`
-      }
-       return html;     
-  }
+    $('#searchButton').on('click', function() {
+      var query = $(`#search`).val(); //?search=query
+      moviesModel.getAll(query).then(function(response) {
+        displayAllMovies(response.results);
+        console.log(response.results);
+      });;
+    }); 
   
 });
