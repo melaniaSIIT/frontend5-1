@@ -20,6 +20,9 @@ function domLoaded() {
 		Cookies.set('accessToken', response.accessToken, { expires: 7 });
 	}
 	function goHome(){
+		$('#register').css('display','none');	
+		$('#login').css('display','none');	
+		$('#welcome-message').css('display','inline-block');
  		setTimeout(function(){window.open("../pages/home.html","_self");},2000);
 	}
 
