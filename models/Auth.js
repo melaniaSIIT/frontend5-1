@@ -25,3 +25,16 @@
         }
       });
   }
+
+  User.prototype.logoutUser = function _ajax_request(token) {
+      return $.ajax({
+        url: 'https://ancient-caverns-16784.herokuapp.com/auth/logout', 
+        headers: {
+          "x-auth-token": token
+        },
+        type: 'GET',
+        success: function(result){
+          console.log(result);
+        }
+      });
+  }

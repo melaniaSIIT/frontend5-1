@@ -181,6 +181,18 @@ h1 {
     border: none;
     background: #f1f1f1;
 }
+span{
+  position: relative;
+}
+#actual-log-out{
+  display: inline-block;
+  height: 50px;
+  width: 70px;
+  position: absolute;
+  right:16.75%;
+  top:-22px;
+  z-index:5;
+}
 
 
  input[type=password] {
@@ -292,7 +304,7 @@ h1 {
 .search-bar input[type=text] {
     padding: 5px;
     border: none;
-    margin: 8px 16px 13px 13px;
+    margin: 10px 16px 13px 13px;
     font-size: 17px;
     height: 30px;
     max-width: 75%;
@@ -313,6 +325,7 @@ h1 {
     top: 14px;
     color: black;
     opacity: 1;
+    display: none;
   }
   #log-out:hover{
     cursor: pointer;

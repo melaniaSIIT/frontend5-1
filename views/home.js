@@ -7,7 +7,7 @@ window.addEventListener("load", function() {
     }).then(showAdminButtons);
 
     function showAdminButtons(){
-       if(authenticatedCookieValue){
+       if(Cookies.get("authenticated")){
         $('.admin-button').css('display','inline-block');
         $('#login').css('display','none');
         $('#register').css('display','none');
@@ -94,6 +94,12 @@ window.addEventListener("load", function() {
 
 
     }
+
+    function clearCookies() {
+      Cookies.remove('username');
+      Cookies.remove('authenticated');
+      Cookies.remove('accessToken');
+    }
     
 
     // TOPNAV click listeners
@@ -104,9 +110,17 @@ window.addEventListener("load", function() {
      $('#login').click(function(){
       window.open("../pages/login.html","_self");
     });
+    $('#actual-log-out').click(function(){
+      clearCookies();
+      let quitter = new User();
+      quitter.logoutUser(accessTokenCookieValue);
+      setTimeout(function(){location.reload();},6.66);
+    });
+
+    
+
 
     // SEARCH MOVIE
- 
     $('#searchButton').on('click', function() {
       let searchFor = $('#search').val(); 
       let newMovies = new Movies();
