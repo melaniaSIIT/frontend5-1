@@ -1,4 +1,3 @@
-
   function User(options) {
       options = options || {};
       this.username = options.username;

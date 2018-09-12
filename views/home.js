@@ -1,6 +1,6 @@
 window.addEventListener("load", function() {
 
-    let containerElement = document.getElementById("movies-list");
+    let containerElement = document.getElementById("flex-container");
     let moviesModel = new Movies();
     moviesModel.getAll().then(function(response) {
       displayAllMovies(response.results);
@@ -15,8 +15,7 @@ window.addEventListener("load", function() {
     }
     
     function displayMovie(movie) {
-      let liEl = document.createElement('li');
-      liEl.style = "list-style-type: none;";
+      let item = document.createElement('div');
       
       let titleEl = document.createElement('h1');
       titleEl.innerHTML = movie.title;
@@ -44,14 +43,17 @@ window.addEventListener("load", function() {
 
       let ratingEl = document.createElement('p');
       ratingEl.innerHTML = "IMDB Rating: " + movie.rating;
+
       
       let idEl = document.createElement('p');
       idEl.innerHTML = movie.id;
       
       let editBtn = document.createElement('button');
-      editBtn.innerHTML = "   Edit   ";
+      editBtn.innerHTML = "Edit";
       editBtn.setAttribute("id", "edit-" + movie.id);
       editBtn.setAttribute("name", "Edit");
+      editBtn.setAttribute("class", "admin-button");
+
 
       //Edit Event
       editBtn.addEventListener("click", function(){
@@ -59,22 +61,25 @@ window.addEventListener("load", function() {
       })
   
       let deleteBtn = document.createElement('button');
-      deleteBtn.innerHTML = "  Delete  ";
+      deleteBtn.innerHTML = "Delete";
       deleteBtn.setAttribute("id", "delete-" + movie.id);
       deleteBtn.setAttribute("name", "Delete");
-           
-        
-      liEl.appendChild(titleEl);
-      liEl.appendChild(bodyEl);
-      liEl.appendChild(yearEl);
-      liEl.appendChild(ratingEl);
-      liEl.appendChild(imgEl);
-      liEl.appendChild(editBtn);
-      liEl.appendChild(deleteBtn);
+      deleteBtn.setAttribute("class", "admin-button");
 
-      liEl.setAttribute("class", "movie");
+
+      ratingEl.appendChild(editBtn);
+      ratingEl.appendChild(deleteBtn);
+        
+      item.appendChild(titleEl);
+      item.appendChild(bodyEl);
+      item.appendChild(yearEl);
+      item.appendChild(ratingEl);
+      item.appendChild(imgEl);
+  
+
+      item.setAttribute("class", "movie");
      
-      containerElement.appendChild(liEl);
+      containerElement.appendChild(item);
       
     }
     
