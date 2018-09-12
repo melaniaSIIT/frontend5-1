@@ -4,7 +4,6 @@ window.addEventListener("load", function() {
     let moviesModel = new Movies();
     moviesModel.getAll().then(function(response) {
       displayAllMovies(response.results);
-      console.log(response.results);
     }).then(showAdminButtons);
 
     function showAdminButtons(){
@@ -109,8 +108,9 @@ window.addEventListener("load", function() {
     // SEARCH MOVIE
  
     $('#searchButton').on('click', function() {
-      var query = $(`#search`).val(); //?search=query
-      moviesModel.getAll(query).then(function(response) {
+      let searchFor = $('#search').val(); 
+      let newMovies = new Movies();
+      newMovies.searchByTitle(searchFor).then(function(response) {
         displayAllMovies(response.results);
         console.log(response.results);
       });;
@@ -122,11 +122,6 @@ window.addEventListener("load", function() {
     let authenticatedCookieValue = Cookies.get("authenticated");
     let accessTokenCookieValue = Cookies.get("accessToken");
     console.log(usernameCookieValue,authenticatedCookieValue,accessTokenCookieValue);
-
-
-
-   
-
 
 
 });
