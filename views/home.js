@@ -9,8 +9,12 @@ window.addEventListener("load", function() {
 
     function showAdminButtons(){
        if(authenticatedCookieValue){
-        $('.admin-button').css('display','block');
-       }
+        $('.admin-button').css('display','inline-block');
+        $('#login').css('display','none');
+        $('#register').css('display','none');
+        $('#greeter').css('display','inline-block');
+        $('#greeter').html(`Hello ${usernameCookieValue} | <span id='log-out'> Log out <span>`);
+        }
     }
     
     function displayAllMovies(moviesData) {
@@ -58,7 +62,8 @@ window.addEventListener("load", function() {
       editBtn.innerHTML = "Edit";
       editBtn.setAttribute("id", "edit-" + movie.id);
       editBtn.setAttribute("name", "Edit");
-      editBtn.setAttribute("class", "admin-button");
+      editBtn.setAttribute("class", "admin-button edit-button");
+
 
 
       //Edit Event
@@ -70,7 +75,8 @@ window.addEventListener("load", function() {
       deleteBtn.innerHTML = "Delete";
       deleteBtn.setAttribute("id", "delete-" + movie.id);
       deleteBtn.setAttribute("name", "Delete");
-      deleteBtn.setAttribute("class", "admin-button");
+      deleteBtn.setAttribute("class", "admin-button delete-button");
+
 
       let adminButtons = document.createElement('div');
       adminButtons.appendChild(editBtn);
@@ -86,7 +92,8 @@ window.addEventListener("load", function() {
       item.setAttribute("class", "movie");
      
       containerElement.appendChild(item);
-      
+
+
     }
     
 
