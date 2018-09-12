@@ -186,14 +186,16 @@ span{
 }
 #actual-log-out{
   display: inline-block;
-  height: 50px;
-  width: 70px;
+  height: 40px;
+  width: 75px;
   position: absolute;
-  right:16.75%;
-  top:-22px;
+  right:10.5em;
+  top:-20px;
   z-index:5;
 }
-
+#actual-log-out:hover {
+  cursor:pointer;
+}
 
  input[type=password] {
   width: 100%;
