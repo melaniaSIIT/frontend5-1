@@ -6,12 +6,29 @@ function domLoaded() {
 	// Function that sends payload object to server for registering
 	function register(payload){
 			var user = new User();
-			user.registerUser(payload).then(displayResponse);
+			username = payload.username;
+			user.registerUser(payload).then(displayResponse).then(goHome);
 		}
 		
 		function displayResponse(response){
 			console.log(response.authenticated);
 			console.log(response.accessToken);
+			
+
+			// Because of closure, here i have access to the username from above.
+			// Also, naturally here i have access to the response that contains the access token and authenticated checker
+			// Therefore, here the cookie shall be set
+
+			Cookies.set('username', username, { expires: 7, path: '' });
+			Cookies.set('authenticated', response.authenticated, { expires: 7, path: '' });
+			Cookies.set('accessToken', response.accessToken, { expires: 7, path: '' });
+		}
+
+		function goHome(){
+			$('#register').css('display','none');
+			$('#login').css('display','none');
+			$('#welcome-message').css('display','inline-block');
+     		setTimeout(function(){window.open("../pages/home.html","_self");},2000);
 		}
 	
 	// Click handler for REGISTER button, triggers function register()  : see above
@@ -41,11 +58,8 @@ function domLoaded() {
 	});
 
 	// Various click handlers
-	$('#info-logo').click(function(){
-		$('info').css('display','inline-block');
-	})
 	$('.left-info').click(function(){
-		$('info').css('display','inline-block');
+		$('info').css('visibility','visible');
 		moveArrow();
 	})
 	$('.right-info').click(function(){
@@ -69,4 +83,5 @@ function domLoaded() {
 	function moveArrow(){
 		$('#small-arrow').css('left','5%');
 	}
+
 }

@@ -6,12 +6,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="../models/Auth.js" type="text/javascript"></script>
-  <script src="../views/register.js" type="text/javascript"></script>
-  <script src="../views/home.js" type="text/javascript"></script>
   <link rel="stylesheet" href="../assets/css/reset.css" type="text/css">
   <link rel="stylesheet" href="../assets/css/register.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script src="../models/Auth.js" type="text/javascript"></script>
+  <script src="../views/register.js" type="text/javascript"></script>
 </head>
 
 	<body>	
@@ -51,8 +51,8 @@
 
 		  <!-- PICS CONTAINER -->
 		  <div class='container container-right clearfix'>
-		 	<p class='info-message left-info'>Register as a producer</p>
-		 	<img id='info-logo' src="../assets/images/register/logo.png"  alt="info_logo">
+		 	<p class='info-message left-info' id='register'>Register as a producer</p>
+		 	<p class='info-message' id='welcome-message'>Welcome friend</p>
 			<p class='info-message right-info' id="login">Already a producer?</p>
 
 		    <img class="uma left"  src="../assets/images/register/left.png"  alt="uma_thurman_black_silhouette">

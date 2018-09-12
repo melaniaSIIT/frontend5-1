@@ -94,10 +94,9 @@
 		margin-left: 3%;
 		overflow: hidden; 
 		clear: right;
-	    min-height: 375px;
+	    min-height: 8em;
 		padding: 5px 15px 20px 0px;
-		border: 1px solid rgba(122, 34, 34, 0.5);
-		border-left: none;
+		border-right: 1px solid rgba(122, 34, 34, 0.5);
 	}
 	
 	.container-right {
@@ -160,19 +159,7 @@
         clear: both;
         display: table;
 	}	
-	#info-logo {
-		position: relative;
-    	top: 0.4em;
-    	left: -10%;
-		/* ------------  */
-		/*border: 1px solid red;*/
-		/* ------------  */
-	}
-	#info-logo:hover, .info-message:hover {
-		cursor: pointer;
-		color: red;
-		transition:1s;
-	}
+	
 	.info-message {
 	    width: 30%; 
 	    display: inline-block;
@@ -186,9 +173,14 @@
 	#info-text {
 		display: inline-flex;
 	}
+	#welcome-message{
+		text-align: center;
+		display:none;
+	}
+
 	info{
 		position: absolute;
-		display: none;
+		visibility: hidden;
 
 		/* ------------  */
 		/*border: 1px solid red;*/
@@ -252,9 +244,7 @@
 
 /* Styles related to moving around things that break*/
 @media only screen  and (max-width : 1275px) {
-	#info-logo{
-		left: -3%;
-	}#small-arrow{
+	#small-arrow{
 		width: 7%;
 	}info:nth-of-type(1){
 	    top: 150px;
@@ -264,9 +254,7 @@
 		top: 175px;
 	}}
 @media only screen  and (max-width : 950px){
-	#info-logo{
-		left: 0%;
-	}info:nth-of-type(1){
+	info:nth-of-type(1){
 	    top: 95px;
 	}
 	
@@ -344,11 +332,6 @@ and (-webkit-device-pixel-ratio: 2){
 	    width: 40%; 
 	    display: inline-block;
 	}
-	#info-logo {
-		width: 5.5%;
-		top: -0.7em;
-		left: -7.5%;
-	}
 	info:nth-of-type(1){
         top: 21.5em;
   	    left: 10%;
@@ -368,9 +351,7 @@ and (-webkit-device-pixel-ratio: 2){
 	.gdpr-disclaimer{
 		font-size: 0.7em;
 	}
-	#info-logo {
-		top: 0.5em;
-	}}
+}
 
 /* IPHONE 6*/
 @media only screen 
@@ -426,11 +407,6 @@ and (orientation : portrait)
 	    width: 40%; 
 	    display: inline-block;
 	}
-	#info-logo {
-		width: 5%;
-		top: -0.7em;
-		left: -8%;
-	}
 	info:nth-of-type(1){
         top: 37vh;
   	    left: 12%;
@@ -462,11 +438,6 @@ and (-webkit-device-pixel-ratio: 3){
 		font-size: 0.85em;
 	    width: 40%; 
 	    display: inline-block;
-	}
-	#info-logo {
-		width: 7%;
-		top: -0.5em;
-		left: -11%;
 	}
 	info:nth-of-type(1){
         top: 40vh;
@@ -502,11 +473,6 @@ and (max-device-height: 640px)
 		font-size: 0.85em;
 	    width: 40%; 
 	    display: inline-block;
-	}
-	#info-logo {
-    	width: 21px;
-        top: 5px;
-        left: -30px;
 	}
 	info:nth-of-type(1) {
 	    top: 41vh;
@@ -552,21 +518,8 @@ and (-webkit-device-pixel-ratio: 3){
 	    width: 40%; 
 	    display: inline-block;
 	}
-	#info-logo {
-		width: 5%;
-		top: -0.7em;
-		left: -8%;
-	}}
+}
 
-
-@media only screen 
-and (min-device-width: 360px) 
-and (max-device-height: 640px) 
-and (orientation : landscape) 
-and (-webkit-device-pixel-ratio: 3){
-	#info-logo {
-		top: 0.5em;
-	}}
 
 
 /* iPads (portrait and landscape) ----------- */
@@ -576,10 +529,7 @@ and (-webkit-device-pixel-ratio: 3){
 and (min-device-width : 768px) 
 and (max-device-width : 1024px)
 and (min-device-height : 376px){
-	#info-logo {
-    left: -7.5%;
-    top: -0.5em;
-	}
+
 	.left, .left-info{
 		margin-left: 2%;
 	}
@@ -589,15 +539,6 @@ and (min-device-height : 376px){
     .right-info{
     	margin-right: 0%;
     }}
-
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : landscape) {
-	#info-logo {
-    left: -4%;
-    top: 0.5em;
-	}}
 
 
 /*IPHONE X small arrow fix (landscape) */
@@ -611,15 +552,7 @@ and (-webkit-device-pixel-ratio: 3){
     top: 4px;
 	}}
 
-/* IPAD PRO info logo fix*/
-@media only screen 
-and (min-device-width : 1024px) 
-and (max-device-width : 1025px)
-and (orientation : portrait){
-	#info-logo {
-   	left: -3%;
-    top: 0.5em;
-	}}
+
 
 /* NEXUS 7 fix */
 @media only screen  
@@ -638,11 +571,7 @@ and (orientation : landscape){
 	    width: 25px;
 	    top: 4px;
 	}
-	#info-logo {
-        width: 3%;
-		left: -20%;
-		top: 6px;
-	}}
+}
 
 @media only screen  
 and (min-width : 600px)
@@ -658,10 +587,6 @@ and (orientation : portrait){
 	.container-right {
 		display: block;
 		margin-right: 10%;
-	}
-	#info-logo {
-	    left: -7%;
-	    top: -8px;
 	}
 	#small-arrow {
 	    width: 6%;
@@ -686,11 +611,6 @@ and (orientation : portrait){
 		font-size: 0.85em;
 	    width: 40%; 
 	    display: inline-block;
-	}
-	#info-logo {
-		width: 6%;
-		top: -10px;
-		left: -14%;
 	}
 	info:nth-of-type(1) {
 	    top: 22.5em;
@@ -718,35 +638,7 @@ and (orientation : landscape){
 	}
 	
 }
-@media only screen  
-and (min-width : 421px)
-and (max-width: 443px)
-and (orientation : portrait){
-	#info-logo {
-		top: -8px;
-    	left: -45px;
-	}
-}
 
-@media only screen  
-and (min-width : 360px)
-and (max-width : 376px)
-and (orientation : portrait){
-	#info-logo {
-		top: -8px;
-   		left: -30px;
-	}
-}
-
-@media only screen  
-and (min-width : 376px)
-and (max-width: 411px)
-and (orientation : portrait){
-	#info-logo {
-		top: -8px;
-   		left: -35px;
-	}
-}
 
 @media only screen  
 and (min-width : 442px)
@@ -754,19 +646,6 @@ and (max-width: 552px)
 and (orientation : portrait){
 	.info-message{
 		width: 35%;
-	}
-	#info-logo {
-		top: -8px;
-    	left: -40px;
-	}
-}
-
-@media only screen  
-and (min-width : 508px)
-and (max-width: 552px){
-	#info-logo {
-		top: 5px;
-    	left: 0px;
 	}
 }
 

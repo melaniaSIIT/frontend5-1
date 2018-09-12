@@ -3,7 +3,6 @@ window.addEventListener("load", function() {
 
 
     let containerElement = document.getElementById("movies-list");
-
     let moviesModel = new Movies();
     moviesModel.getAll().then(function(response) {
       displayAllMovies(response.results);
@@ -100,5 +99,11 @@ window.addEventListener("load", function() {
         console.log(response.results);
       });;
     }); 
-  
+    
+
+    // these are the 3 cookies now available on homepage, to do with them as u please
+    usernameCookieValue = Cookies.get("username");
+    authenticatedCookieValue = Cookies.get("authenticated");
+    accessTokenCookieValue = Cookies.get("accessToken");
+    console.log(usernameCookieValue,authenticatedCookieValue,accessTokenCookieValue);
 });
