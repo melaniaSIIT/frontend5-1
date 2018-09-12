@@ -1,7 +1,5 @@
 window.addEventListener("load", function() {
 
-
-
     let containerElement = document.getElementById("movies-list");
     let moviesModel = new Movies();
     moviesModel.getAll().then(function(response) {

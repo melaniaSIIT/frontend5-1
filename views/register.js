@@ -7,30 +7,22 @@ function domLoaded() {
 	function register(payload){
 			var user = new User();
 			username = payload.username;
-			user.registerUser(payload).then(displayResponse).then(goHome);
-		}
-		
-		function displayResponse(response){
-			console.log(response.authenticated);
-			console.log(response.accessToken);
-			
+			user.registerUser(payload).then(user.loginUser(payload)).then(displayResponse).then(goHome);
+	}
+	function displayResponse(response){
+		console.log(response.authenticated);
+		console.log(response.accessToken);
+		// Because of closure, here i have access to the username from above.
+		// Also, naturally here i have access to the response that contains the access token and authenticated checker
+		// Therefore, here the cookie shall be set
+		Cookies.set('username', username, { expires: 7 });
+		Cookies.set('authenticated', response.authenticated, { expires: 7 });
+		Cookies.set('accessToken', response.accessToken, { expires: 7 });
+	}
+	function goHome(){
+ 		setTimeout(function(){window.open("../pages/home.html","_self");},2000);
+	}
 
-			// Because of closure, here i have access to the username from above.
-			// Also, naturally here i have access to the response that contains the access token and authenticated checker
-			// Therefore, here the cookie shall be set
-
-			Cookies.set('username', username, { expires: 7 });
-			Cookies.set('authenticated', response.authenticated, { expires: 7 });
-			Cookies.set('accessToken', response.accessToken, { expires: 7 });
-		}
-
-		function goHome(){
-			$('#register').css('display','none');
-			$('#login').css('display','none');
-			$('#welcome-message').css('display','inline-block');
-     		setTimeout(function(){window.open("../pages/home.html","_self");},2000);
-		}
-	
 	// Click handler for REGISTER button, triggers function register()  : see above
 	$('#submit').click(function(){
 		let user,pass;

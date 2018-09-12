@@ -15,3 +15,14 @@
         }
       });
   }
+
+  User.prototype.loginUser = function _ajax_request(data) {
+      return $.ajax({
+        url: 'https://ancient-caverns-16784.herokuapp.com/auth/login',
+        type: 'POST',
+        data: data,
+        success: function(result){
+          console.log('Producer logged in');
+        }
+      });
+  }
