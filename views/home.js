@@ -5,7 +5,13 @@ window.addEventListener("load", function() {
     moviesModel.getAll().then(function(response) {
       displayAllMovies(response.results);
       console.log(response.results);
-    });
+    }).then(showAdminButtons);
+
+    function showAdminButtons(){
+       if(authenticatedCookieValue){
+        $('.admin-button').css('display','block');
+       }
+    }
     
     function displayAllMovies(moviesData) {
       for (let i = 0; i < moviesData.length; i++) {
@@ -66,16 +72,16 @@ window.addEventListener("load", function() {
       deleteBtn.setAttribute("name", "Delete");
       deleteBtn.setAttribute("class", "admin-button");
 
-
-      ratingEl.appendChild(editBtn);
-      ratingEl.appendChild(deleteBtn);
+      let adminButtons = document.createElement('div');
+      adminButtons.appendChild(editBtn);
+      adminButtons.appendChild(deleteBtn);
         
       item.appendChild(titleEl);
       item.appendChild(bodyEl);
       item.appendChild(yearEl);
       item.appendChild(ratingEl);
       item.appendChild(imgEl);
-  
+      item.appendChild(adminButtons);
 
       item.setAttribute("class", "movie");
      
@@ -105,8 +111,15 @@ window.addEventListener("load", function() {
     
 
     // these are the 3 cookies now available on homepage, to do with them as u please
-    usernameCookieValue = Cookies.get("username");
-    authenticatedCookieValue = Cookies.get("authenticated");
-    accessTokenCookieValue = Cookies.get("accessToken");
+    let usernameCookieValue = Cookies.get("username");
+    let authenticatedCookieValue = Cookies.get("authenticated");
+    let accessTokenCookieValue = Cookies.get("accessToken");
     console.log(usernameCookieValue,authenticatedCookieValue,accessTokenCookieValue);
+
+
+
+   
+
+
+
 });
