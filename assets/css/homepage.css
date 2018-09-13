@@ -169,6 +169,9 @@ body {
   font-weight: 700;
   margin-top:0.9em;
 }
+.movie h1:hover {
+  cursor: pointer;
+}
 
 
 body, html {
@@ -260,6 +263,7 @@ span{
   width: 100%;
   opacity: 0.9;
 }
+
 
 .btn:hover {
   opacity: 1;

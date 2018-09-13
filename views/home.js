@@ -16,13 +16,12 @@ window.addEventListener("load", function() {
     // get container for all movies
     let containerElement = document.getElementById("flex-container");
     let moviesModel = new Movies();
-    showAdminButtons();
     moviesModel.getAll().then(function(response) {
       displayAllMovies(response.results);
     });
 
 
-    // Shows admin only buttons: edit, delete, add movie 
+    // Shows admin only buttons: edit, delete, 
     function showAdminButtons(){
        if(Cookies.get("authenticated")){
         $('.admin-button').css('display','inline-block');
@@ -41,14 +40,32 @@ window.addEventListener("load", function() {
     }
     
     function displayMovie(movie) {
+
+      // ADMIN BUTTONS
+      // create these buttons first and show them through showAdminButtons();
+      let editBtn = document.createElement('button');
+      editBtn.innerHTML = "Edit";
+      editBtn.setAttribute("id", "edit-" + movie.id);
+      editBtn.setAttribute("name", "Edit");
+      editBtn.setAttribute("class", "admin-button edit-button");
+  
+      let deleteBtn = document.createElement('button');
+      deleteBtn.innerHTML = "Delete";
+      deleteBtn.setAttribute("id", "delete-" + movie.id);
+      deleteBtn.setAttribute("name", "Delete");
+      deleteBtn.setAttribute("class", "admin-button delete-button");
+
+      let adminButtons = document.createElement('div');
+      adminButtons.appendChild(editBtn);
+      adminButtons.appendChild(deleteBtn);
+
+      showAdminButtons();
+
       let item = document.createElement('div');
       
       let titleEl = document.createElement('h1');
       titleEl.innerHTML = movie.title;
       
-      titleEl.addEventListener("mouseover", function () {
-        titleEl.style = "cursor: pointer;";
-      });
           
       titleEl.addEventListener("click", function() {
         window.location = "../pages/movieDetails.html?movieId=" + movie.id;
@@ -74,29 +91,8 @@ window.addEventListener("load", function() {
       let idEl = document.createElement('p');
       idEl.innerHTML = movie.id;
       
-      let editBtn = document.createElement('button');
-      editBtn.innerHTML = "Edit";
-      editBtn.setAttribute("id", "edit-" + movie.id);
-      editBtn.setAttribute("name", "Edit");
-      editBtn.setAttribute("class", "admin-button edit-button");
+      
 
-
-
-      //Edit Event
-      editBtn.addEventListener("click", function(){
-        window.location = "../pages/movieDetails.html?movieId=" + movie.id + "&edit=true";
-      })
-  
-      let deleteBtn = document.createElement('button');
-      deleteBtn.innerHTML = "Delete";
-      deleteBtn.setAttribute("id", "delete-" + movie.id);
-      deleteBtn.setAttribute("name", "Delete");
-      deleteBtn.setAttribute("class", "admin-button delete-button");
-
-
-      let adminButtons = document.createElement('div');
-      adminButtons.appendChild(editBtn);
-      adminButtons.appendChild(deleteBtn);
         
       item.appendChild(titleEl);
       item.appendChild(bodyEl);
@@ -146,7 +142,10 @@ window.addEventListener("load", function() {
       });;
     }); 
     
-
+    //Edit Event
+      editBtn.addEventListener("click", function(){
+        window.location = "../pages/movieDetails.html?movieId=" + movie.id + "&edit=true";
+      })
 
 
 });
