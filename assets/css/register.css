@@ -682,3 +682,10 @@ and (min-width : 1024px){
 		width: 12%;
 	}
 }
+
+@media only screen 
+and (orientation : landscape){
+	.container-left {
+		min-height: 19em;
+	}	
+}
