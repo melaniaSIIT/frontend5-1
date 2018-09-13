@@ -13,7 +13,7 @@ function domLoaded(){
             Cookies.set('accessToken', response.accessToken, { expires: 7 });
         }
         function goHome(){
-            setTimeout(function(){window.open("../pages/home.html","_self");},2000);
+           window.open("../pages/home.html","_self");
         }
 
 
