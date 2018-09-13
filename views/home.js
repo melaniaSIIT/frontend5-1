@@ -48,6 +48,10 @@ window.addEventListener("load", function() {
       editBtn.setAttribute("id", "edit-" + movie.id);
       editBtn.setAttribute("name", "Edit");
       editBtn.setAttribute("class", "admin-button edit-button");
+      //Edit Event
+      editBtn.addEventListener("click", function(){
+        window.location = "../pages/movieDetails.html?movieId=" + movie.id + "&edit=true";
+      })
   
       let deleteBtn = document.createElement('button');
       deleteBtn.innerHTML = "Delete";
@@ -142,10 +146,6 @@ window.addEventListener("load", function() {
       });;
     }); 
     
-    //Edit Event
-      editBtn.addEventListener("click", function(){
-        window.location = "../pages/movieDetails.html?movieId=" + movie.id + "&edit=true";
-      })
 
 
 });
