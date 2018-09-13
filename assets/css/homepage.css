@@ -185,8 +185,6 @@ span{
   position: relative;
 }
 #actual-log-out{
-  background-color: red;
-  opacity: 0.2;
   display: inline-block;
   height: 40px;
   width: 75px;
