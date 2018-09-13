@@ -4,6 +4,34 @@
 }
 
 
+/* LOADER cuz we r fancy today*/
+.loader {
+  position: fixed;
+  left: 44%;
+  top: 48vh;
+  border: 16px solid #bad6da;
+  border-radius: 120%;
+  border-top: 16px solid #74aa94;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+
 body {
     /*background-image: url("../images/film-background.jpg");*/
     background-color: rgba(195, 223, 230, 0.65);
@@ -23,6 +51,7 @@ body {
 
 #flex-container{
   width: 66.6%;
+  min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

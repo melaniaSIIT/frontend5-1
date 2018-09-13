@@ -8,6 +8,11 @@ window.addEventListener("load", function() {
     let accessTokenCookieValue = Cookies.get("accessToken");
     console.log(usernameCookieValue,authenticatedCookieValue,accessTokenCookieValue);
 
+    // function that hides spinner must be called after games are loaded on screen, at the end of display all movies function
+    function hideSpinner(){
+    $('.loader').css('display','none');
+    }
+
     // hides the actual log-out click trigger when not logged in
     if(!Cookies.get("authenticated")){
       $('#actual-log-out').css('display','none');
@@ -37,6 +42,7 @@ window.addEventListener("load", function() {
         let movie = new Movie(moviesData[i]);
         displayMovie(movie);
       }
+      hideSpinner();
     }
     
     function displayMovie(movie) {
