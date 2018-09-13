@@ -18,7 +18,7 @@ window.addEventListener("load", function() {
         $('#login').css('display','none');
         $('#register').css('display','none');
         $('#greeter').css('display','inline-block');
-        $('#greeter').html(`Hello ${usernameCookieValue} | <span id='log-out'> Log out <span>`);
+        $('#greeter').html(`Hello ${usernameCookieValue} | Log out`);
         }
     }
     
