@@ -1,5 +1,11 @@
 window.addEventListener("load", function() {
 
+    // hides the actual log-out click trigger when not logged in
+    if(!Cookies.get("authenticated")){
+      $('#actual-log-out').css('display','none');
+    }
+
+    // get container for all movies
     let containerElement = document.getElementById("flex-container");
     let moviesModel = new Movies();
     moviesModel.getAll().then(function(response) {
@@ -91,7 +97,6 @@ window.addEventListener("load", function() {
       item.setAttribute("class", "movie");
      
       containerElement.appendChild(item);
-
 
     }
 
