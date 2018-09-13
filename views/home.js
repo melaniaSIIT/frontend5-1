@@ -1,5 +1,13 @@
 window.addEventListener("load", function() {
 
+
+     // these are the 3 cookies now available on homepage, to do with them as u please
+     // extract them first so page doesn't have to delay painting because it doesnt yet have the cookies
+    let usernameCookieValue = Cookies.get("username");
+    let authenticatedCookieValue = Cookies.get("authenticated");
+    let accessTokenCookieValue = Cookies.get("accessToken");
+    console.log(usernameCookieValue,authenticatedCookieValue,accessTokenCookieValue);
+
     // hides the actual log-out click trigger when not logged in
     if(!Cookies.get("authenticated")){
       $('#actual-log-out').css('display','none');
@@ -8,10 +16,13 @@ window.addEventListener("load", function() {
     // get container for all movies
     let containerElement = document.getElementById("flex-container");
     let moviesModel = new Movies();
+    showAdminButtons();
     moviesModel.getAll().then(function(response) {
       displayAllMovies(response.results);
-    }).then(showAdminButtons);
+    });
 
+
+    // Shows admin only buttons: edit, delete, add movie 
     function showAdminButtons(){
        if(Cookies.get("authenticated")){
         $('.admin-button').css('display','inline-block');
@@ -136,11 +147,6 @@ window.addEventListener("load", function() {
     }); 
     
 
-    // these are the 3 cookies now available on homepage, to do with them as u please
-    let usernameCookieValue = Cookies.get("username");
-    let authenticatedCookieValue = Cookies.get("authenticated");
-    let accessTokenCookieValue = Cookies.get("accessToken");
-    console.log(usernameCookieValue,authenticatedCookieValue,accessTokenCookieValue);
 
 
 });
