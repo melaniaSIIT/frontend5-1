@@ -78,38 +78,9 @@ body {
 }
 
 /*  box-shadows*/
-.movie:nth-of-type(1){
+.movie{
   box-shadow: -2px 3px 2px 1px rgba(0,0,0,0.1);
 }
-.movie:nth-of-type(2){
-  box-shadow: -2px 3px 2px 1px rgba(0,0,0,0,1);
-}
-.movie:nth-of-type(3){
-  box-shadow: -2px 3px 2px 1px rgba(0,0,0,0.1);
-}
-.movie:nth-of-type(4){
-  box-shadow: -2px 3px 2px 1px rgba(0,0,0,0.1);
-}
-.movie:nth-of-type(5){
-  box-shadow: -2px 3px 2px 1px rgba(0,0,0,0.1);
-}
-.movie:nth-of-type(6){
-  box-shadow: -2px 3px 2px 1px rgba(0,0,0,0.1);
-}
-.movie:nth-of-type(7){
-  box-shadow: -2px 3px 2px 1px rgba(0,0,0,0.1);
-}
-.movie:nth-of-type(8){
-  box-shadow: -2px 3px 2px 1px rgba(0,0,0,0.1);
-}
-.movie:nth-of-type(9){
-  box-shadow: -2px 3px 2px 1px rgba(0,0,0,0.1);
-}
-.movie:nth-of-type(10){
-  box-shadow: -2px 3px 2px 1px rgba(0,0,0,0.1);
-}
-
-
 
 .movie * {
   color: #00171c;
