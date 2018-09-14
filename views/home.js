@@ -147,11 +147,11 @@ window.addEventListener("load", function() {
       let searchFor = $('#search').val(); 
       let newMovies = new Movies();
       newMovies.searchByTitle(searchFor).then(function(response) {
+        containerElement.innerHTML = '';
         displayAllMovies(response.results);
         console.log(response.results);
       });;
     }); 
     
-
 
 });
