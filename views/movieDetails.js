@@ -5,6 +5,11 @@ window.addEventListener("load", function() {
     var movieId = getUrlParameter("movieId");
     movie.id = movieId;
 
+    let usernameCookieValue = Cookies.get("username");
+    let authenticatedCookieValue = Cookies.get("authenticated");
+    let accessTokenCookieValue = Cookies.get("accessToken");
+    console.log(usernameCookieValue,authenticatedCookieValue,accessTokenCookieValue);
+
     //Edit Parameter
     var edit = false;
     edit = getUrlParameter("edit");
