@@ -142,16 +142,18 @@ window.addEventListener("load", function() {
     
 
 
-    // SEARCH MOVIE
+    // SEARCH MOVIE by title
+
     $('#searchButton').on('click', function() {
       let searchFor = $('#search').val(); 
       let newMovies = new Movies();
-      newMovies.searchByTitle(searchFor).then(function(response) {
+      newMovies.searchBy(searchFor).then(function(response) {
         containerElement.innerHTML = '';
         displayAllMovies(response.results);
         console.log(response.results);
-      });;
+      });
+
+      
     }); 
-    
 
 });
