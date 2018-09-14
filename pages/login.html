@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Signe Up</title>
+        <link rel="stylesheet" href="../assets/css/login.css" type="text/css">
+        <style>@import url('https://fonts.googleapis.com/css?family=Open+Sans');</style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="../views/login.js"></script>
+        <script src="/views/login.js"></script>
         <script src="../models/Auth.js"></script>
-        <script src="../models/login.css"></script>
-        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     </head>
     <body>
-            <input type="text" name="username" id="username"/>
-            <input type="password" name="password" id="password"/>
-            <input type="button" value="Login" id="submit" />
+            <form class="login">
+                <h1 class="login-title">Login</h1>
+                <br>
+                <input type="text" class="login-input" placeholder="username" id="username"/>
+                <input type="password" class="login-input" placeholder="password" id="password"/>
+                <input type="button" class="login-button" value="Submit" id="submit" />
+                <p class="login-lost"><a href="">Forgot Password?</a></p>
+                </div>
+            </form>
     </body>
 </html>
