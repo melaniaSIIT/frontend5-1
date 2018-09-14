@@ -73,7 +73,6 @@ window.addEventListener("load", function() {
       adminButtons.appendChild(editBtn);
       adminButtons.appendChild(deleteBtn);
 
-      showAdminButtons();
 
       let item = document.createElement('div');
       
@@ -118,6 +117,8 @@ window.addEventListener("load", function() {
       item.setAttribute("class", "movie");
      
       containerElement.appendChild(item);
+      showAdminButtons();
+
 
     }
 

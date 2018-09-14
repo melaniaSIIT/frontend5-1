@@ -112,7 +112,8 @@ body {
     overflow: hidden;
     background-color: rgba(111, 185, 143,0.5);
     width: 100%;
-    margin-bottom: 5vh;
+    margin-bottom: 5vh;    
+    height: 62px;
     top: 0px;
     z-index: 1;   
 }
@@ -301,6 +302,7 @@ aside {
    content: "\2605";
    position: absolute;
 }
+
 @media screen and (max-width: 567px) {
     .topnav a, .topnav input[type=text] {
         float: none;
