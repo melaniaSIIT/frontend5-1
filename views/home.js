@@ -16,7 +16,7 @@ window.addEventListener("load", function() {
     // hides the actual log-out click trigger when not logged in
     if(!Cookies.get("authenticated")){
       $('#actual-log-out').css('display','none');
-    }
+    }else showGreetings();
 
     // get container for all movies
     let containerElement = document.getElementById("flex-container");
@@ -25,15 +25,19 @@ window.addEventListener("load", function() {
       displayAllMovies(response.results);
     });
 
-
-    // Shows admin only buttons: edit, delete, 
-    function showAdminButtons(){
-       if(Cookies.get("authenticated")){
-        $('.admin-button').css('display','inline-block');
+    //  Shows welcome message, hides login and register buttons, call this first, before page paint, see above
+    function showGreetings(){
         $('#login').css('display','none');
         $('#register').css('display','none');
         $('#greeter').css('display','inline-block');
         $('#greeter').html(`Hello ${usernameCookieValue} | Log out`);
+    }
+
+
+    // Shows admin only buttons for each movie: edit, delete, 
+    function showAdminButtons(){
+       if(Cookies.get("authenticated")){
+        $('.admin-button').css('display','inline-block');
         }
     }
     
