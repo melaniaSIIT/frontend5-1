@@ -31,14 +31,15 @@ function Movie(options) {
     })
   }
 
-  Movie.prototype.updateMovie = function(title, plot) {
+  Movie.prototype.updateMovie = function(data) {
     var that = this;
     return $.put("https://ancient-caverns-16784.herokuapp.com/movies/" + this.id, {
-      title, 
-      plot
+      data
     })
     .then(function(response){
-      window.location = "../pages/home.html#home"
+      console.log(response);
+      alert ("Changes have been made successful!");
+      window.location = "../pages/home.html#home";
     });
   }
 
