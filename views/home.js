@@ -138,10 +138,10 @@ window.addEventListener("load", function() {
       window.open("../pages/login.html","_self");
     });
     $('#actual-log-out').click(function(){
-      clearCookies();
       let quitter = new User();
       quitter.logoutUser(accessTokenCookieValue);
-      setTimeout(function(){location.reload();},6.66);
+      setTimeout(clearCookies, 100);
+      setTimeout(function(){location.reload();},1500);
     });
 
     

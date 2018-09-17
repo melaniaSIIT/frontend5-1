@@ -55,7 +55,14 @@ function domLoaded() {
 	// Various click handlers
 	$('.left-info').click(function(){
 		$('info').css('visibility','visible');
+		$('#info-1').html("Registered producers can");
+		$('#info-2').html("add, edit and delete movies.");
 		moveArrow();
+	})
+	$('#gdpr-link').click(function(){
+		$('info').css('visibility','visible');
+		$('#info-1').html("Cookies are used to track");
+		$('#info-2').html("user and hold no data otherwise.");
 	})
 	$('.right-info').click(function(){
 		// go to login page

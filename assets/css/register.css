@@ -30,8 +30,9 @@
     	background-color: rgba(230,230,230,0.75);
     	position: fixed;
    		width: 100%;
-   		top: -1px;
+   		top: 0px;
    		z-index: 4;
+   		height: 62px;
 	}
 	/* Style the links inside the navigation bar */
 	.topnav a {
@@ -198,6 +199,9 @@
 	info:nth-of-type(2){
 		top: 175px;
    		left: 48%;
+	}
+	.left-info{
+		cursor: pointer;
 	}	
 	
 	.right-info {

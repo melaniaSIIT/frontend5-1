@@ -97,15 +97,6 @@ body {
     
 }
 
-#title {
-	font-size: 70px;
-	text-align: center;
-	color: white;
-    margin-top: 0.435em;
-    margin-bottom: 0.5em;
-}
-
-
 
 /* Add a black background color to the top navigation bar */
 .topnav {
@@ -263,14 +254,19 @@ aside {
     top: 12%;
 }
 
-#movieTitleId {
+/* #movieTitleId {
     text-align: center;
     font-size: 20px;
-}
+} */
 
 #movieImageId {
     float: left;
     margin-right: 30px;
+}
+
+textarea {
+    width: 49.2%;
+    height: 10%;
 }
 
 .clear {
@@ -345,12 +341,12 @@ aside {
       top: 1.25em;
       clear: left;
     }
-    #movieTitleId{
+    /* #movieTitleId{
       margin-top: 1em;
       text-align: left;
       width: 80%;
       left: 0;
-    }
+    } */
     h2{
         font-size: 0.85em;
     }
