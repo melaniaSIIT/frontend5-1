@@ -132,15 +132,7 @@ window.addEventListener("load", function() {
         containerEl.appendChild(actionContainer);
         }
 
-    //Rate movie
-      var asideRateContainer = document.getElementById("asideSection");
 
-    //Rating Text
-      var rateMovieText = document.createElement("h2");
-      rateMovieText.innerHTML = "Rate " +  movieDetails.title;
-      asideRateContainer.appendChild(rateMovieText);
-        
-    //Rating Alert
       } 
 
     //function for edit one one movie display
