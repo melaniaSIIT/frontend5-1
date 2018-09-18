@@ -7,9 +7,11 @@
   		height: 100%; /*for older browsers*/
   		height: 100vh; 
 	}
+	a{
+		cursor: pointer;
+	}
 
 	a:hover {
-		cursor: pointer;
 		color: red;
 		transition: 1s;
 	}
@@ -61,7 +63,7 @@
 	.topnav a.active:nth-of-type(1) {
 	    margin-left: 3%;
 	    position: relative;
-	    top:-0.5px;
+	    top:-1px;
 	    left: -0.5px;
 	}
 	.grid{

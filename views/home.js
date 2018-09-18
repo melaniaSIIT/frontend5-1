@@ -139,9 +139,7 @@ window.addEventListener("load", function() {
     });
     $('#actual-log-out').click(function(){
       let quitter = new User();
-      quitter.logoutUser(accessTokenCookieValue);
-      setTimeout(clearCookies, 100);
-      setTimeout(function(){location.reload();},1500);
+      quitter.logoutUser(accessTokenCookieValue).then(clearCookies()).then(setTimeout(function(){location.reload();},500));
     });
 
     
