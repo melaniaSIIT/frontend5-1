@@ -40,7 +40,7 @@ window.addEventListener("load", function() {
         $('#login').css('display','none');
         $('#register').css('display','none');
         $('#greeter').css('display','inline-block');
-        $('#greeter').html(`Hello ${usernameCookieValue} | Log out`);
+        $('#greeter').html(`Hello ${usernameCookieValue} | <span id='logout'>Log out</span>`);
     }
 
 
@@ -147,7 +147,7 @@ window.addEventListener("load", function() {
     $('#login').click(function(){
       window.open("../pages/login.html","_self");
     });
-    $('#actual-log-out').click(function(){
+    $('#logout').click(function(){
       let quitter = new User();
       quitter.logoutUser(accessTokenCookieValue).then(clearCookies()).then(setTimeout(function(){location.reload();},500));
     });

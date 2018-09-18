@@ -156,18 +156,7 @@ img {
 span{
   position: relative;
 }
-#actual-log-out{
-  display: inline-block;
-  height: 40px;
-  width: 75px;
-  position: absolute;
-  right:10.5em;
-  top:-20px;
-  z-index:5;
-}
-#actual-log-out:hover {
-  cursor:pointer;
-}
+
 
  input[type=password] {
   width: 100%;
@@ -320,6 +309,7 @@ span{
 
   #greeter{
     float:right;
+    margin-right: 1em;
     position: relative;
     z-index:3;
     font-size: 0.8em;
@@ -327,12 +317,11 @@ span{
     color: black;
     opacity: 1;
     display: none;
-    transition: 2s;
   }
-  #log-out:hover{
+  #logout:hover{
     cursor: pointer;
-    color: #693d3d;
-    transition: 1.33s;
+    color: #7a0d5b;
+    transition: 1s;
   }
 
 
@@ -445,10 +434,3 @@ form {
 
 }
 
-/* Chrome 29+ */
-@media screen and (-webkit-min-device-pixel-ratio:0)
-  and (min-resolution:.001dpcm) {
-    #actual-log-out{
-      right:11.5em;
-      } 
-}
