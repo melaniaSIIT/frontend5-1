@@ -59,3 +59,29 @@ function Movie(options) {
       contentType: type
     });
   }
+
+
+
+  Movie.prototype.updateMovie = function(token, data) {
+    return $.delete( {
+      data
+    })
+    .then(function(response){
+      console.log(response);
+      alert ("Changes have been made successful!");
+      window.location = "../pages/home.html#home";
+    });
+  }
+
+  Movie.prototype.deleteMovie = function(token){
+	return $.ajax({
+		url: "https://ancient-caverns-16784.herokuapp.com/movies/" + this.id,
+		type: 'DELETE',
+		headers: {
+			  "x-auth-token": token
+		},
+		success: function(result) {
+				 console.log(result);
+		}
+	});
+  }

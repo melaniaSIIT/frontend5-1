@@ -1,6 +1,7 @@
 window.addEventListener("load", function() {
 
 
+
      // these are the 3 cookies now available on homepage, to do with them as u please
      // extract them first so page doesn't have to delay painting because it doesnt yet have the cookies
     let usernameCookieValue = Cookies.get("username");
@@ -21,9 +22,18 @@ window.addEventListener("load", function() {
     // get container for all movies
     let containerElement = document.getElementById("flex-container");
     let moviesModel = new Movies();
-    moviesModel.getAll().then(function(response) {
-      displayAllMovies(response.results);
-    });
+
+	function displayAllMovies(movies) {
+	  containerElement.innerHTML = "";
+	  const moviesData = movies.results;
+      for (let i = 0; i < moviesData.length; i++) {
+        let movie = new Movie(moviesData[i]);
+        displayMovie(movie);	
+      }
+      hideSpinner();
+    }
+   
+    moviesModel.getAll().then(displayAllMovies);
 
     //  Shows welcome message, hides login and register buttons, call this first, before page paint, see above
     function showGreetings(){
@@ -41,13 +51,7 @@ window.addEventListener("load", function() {
         }
     }
     
-    function displayAllMovies(moviesData) {
-      for (let i = 0; i < moviesData.length; i++) {
-        let movie = new Movie(moviesData[i]);
-        displayMovie(movie);
-      }
-      hideSpinner();
-    }
+    
     
     function displayMovie(movie) {
 
@@ -68,6 +72,12 @@ window.addEventListener("load", function() {
       deleteBtn.setAttribute("id", "delete-" + movie.id);
       deleteBtn.setAttribute("name", "Delete");
       deleteBtn.setAttribute("class", "admin-button delete-button");
+	  deleteBtn.addEventListener("click", function() {
+		movie.deleteMovie(accessTokenCookieValue).then(function() {
+			moviesModel.getAll().then(displayAllMovies);
+		});
+	  });
+
 
       let adminButtons = document.createElement('div');
       adminButtons.appendChild(editBtn);
@@ -134,7 +144,7 @@ window.addEventListener("load", function() {
     $('#register').click(function(){
       window.open("../pages/register.html","_self");
     });
-     $('#login').click(function(){
+    $('#login').click(function(){
       window.open("../pages/login.html","_self");
     });
     $('#actual-log-out').click(function(){
@@ -153,8 +163,6 @@ window.addEventListener("load", function() {
         containerElement.innerHTML = '';
         displayAllMovies(response.results);
         console.log(response.results);
-      });;
-    }); 
-    
-
+      });
+    });
 });
