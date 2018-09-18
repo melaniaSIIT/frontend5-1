@@ -10,6 +10,8 @@
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
   <script type="text/javascript" src="../models/Movie.js"></script>
   <script type="text/javascript" src="../views/movieDetails.js"></script>
+  <script type="text/javascript" src="../models/Auth.js"></script>
+  <script type="text/javascript" src="../views/login.js"></script>
   <script type="text/javascript" src="../views/login.js"></script>
   <script type="text/javascript" src="../views/register.js"></script>
   <link rel="stylesheet" href="../assets/css/reset.css" type="text/css">
@@ -21,10 +23,14 @@
       <a class="active" id="home" href="#home">Home</a>
       <a class="active" id="register">Register</a>
       <a class="active" id="login">Login</a>
+      
       <div class="search-container">
         <input id="search" type="text" placeholder="Search.." name="search">
         <button id="searchButton" type="submit"><i class="fa fa-search"></i></button>
       </div>
+
+      <div id='greeter'></div>
+      <p id='actual-log-out'><p>
   </div>
 
   <article>
@@ -36,7 +42,7 @@
 
 
   <img id="title-logo" src="../assets/images/title-logo.png" alt="Movies-heading-logo">
-  
+
   <div class="clear"></div>
 </body>
 </html>

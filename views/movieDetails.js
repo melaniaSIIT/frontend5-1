@@ -11,6 +11,29 @@ window.addEventListener("load", function() {
     let accessTokenCookieValue = Cookies.get("accessToken");
     console.log(usernameCookieValue,authenticatedCookieValue,accessTokenCookieValue);
 
+    // hides the actual log-out click trigger when not logged in
+    if(!Cookies.get("authenticated")){
+      $('#actual-log-out').css('display','none');
+      $('#editButtonId').css('display', 'none');
+      $('#deleteButtonId').css('display', 'none');
+    }else showGreetings();
+
+    //  Shows welcome message, hides login and register buttons, call this first, before page paint, see above
+    function showGreetings(){
+      $('#login').css('display','none');
+      $('#register').css('display','none');
+      $('#greeter').css('display','inline-block');
+      $('#greeter').html(`Hello ${usernameCookieValue} | Log out`);
+    }
+
+    // Shows admin only buttons for each movie: edit, delete, 
+    function showAdminButtons(){
+      if(Cookies.get("authenticated")){
+        $('#editButtonId').css('display', 'inline-block');
+        $('#deleteButtonId').css('display', 'inline-block');
+      }
+    }
+
     //Edit Parameter
     var edit = getUrlParameter("edit");
     // array with all the properties we use
@@ -48,7 +71,7 @@ window.addEventListener("load", function() {
         actionContainer.appendChild(backButton);
 
     //Edit
-        if(edit) {
+        if(edit && accessTokenCookieValue) {
 
           // parsed every movie property that we want to display
           // they are stored in movieDisplayDetails
@@ -120,19 +143,20 @@ window.addEventListener("load", function() {
         var editButton = document.createElement("button");
         editButton.innerHTML = "Edit";
         editButton.setAttribute("class", "actionButtonClass");
+        editButton.setAttribute("id", "editButtonId");
         editButton.addEventListener("click", editButtonFunction);
           
         var deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";
         deleteButton.setAttribute("class", "actionButtonClass");
+        deleteButton.setAttribute("id", "deleteButtonId");
       
         
         actionContainer.appendChild(editButton);
         actionContainer.appendChild(deleteButton);
         containerEl.appendChild(actionContainer);
+        showAdminButtons()
         }
-
-
       } 
 
     //function for edit one one movie display
@@ -149,6 +173,25 @@ window.addEventListener("load", function() {
         }
       }
 
+          // TOPNAV click listeners
+
+    $('#register').click(function(){
+      window.open("../pages/register.html","_self");
+    });
+     $('#login').click(function(){
+      window.open("../pages/login.html","_self");
+    });
+    $('#actual-log-out').click(function(){
+      let quitter = new User();
+      quitter.logoutUser(accessTokenCookieValue).then(clearCookies()).then(setTimeout(function(){window.location = "../pages/home.html#home"},500));
+    });
+
+
+    function clearCookies() {
+      Cookies.remove('username');
+      Cookies.remove('authenticated');
+      Cookies.remove('accessToken');
+    }
 
     // TOPNAV click listeners
     $('#register').click(function(){
