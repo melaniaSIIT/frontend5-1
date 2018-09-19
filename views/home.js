@@ -146,7 +146,7 @@ window.addEventListener("load", function() {
 
     
 
-
+    
     // SEARCH MOVIE by title
 
     $('#searchButton').on('click', function() {
@@ -159,6 +159,6 @@ window.addEventListener("load", function() {
       });
 
       
-    }); 
-
+  });
+    
 });

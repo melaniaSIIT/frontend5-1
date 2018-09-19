@@ -313,27 +313,22 @@ span{
   }
 }
 
-  #greeter{
-    float:right;
-    position: relative;
-    z-index:3;
-    font-size: 0.8em;
-    top: 14px;
-    color: black;
-    opacity: 1;
-    display: none;
-    transition: 2s;
-  }
-  #log-out:hover{
-    cursor: pointer;
-    color: #693d3d;
-    transition: 1.33s;
-  }
-
-
-
-
-
+#greeter{
+  float:right;
+  position: relative;
+  z-index:3;
+  font-size: 0.8em;
+  top: 14px;
+  color: black;
+  opacity: 1;
+  display: none;
+  transition: 2s;
+}
+#log-out:hover{
+  cursor: pointer;
+  color: #693d3d;
+  transition: 1.33s;
+}
 
 form {
   display: none;
