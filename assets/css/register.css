@@ -63,7 +63,7 @@
 	.topnav a.active:nth-of-type(1) {
 	    margin-left: 3%;
 	    position: relative;
-	    top:-.5px;
+	    top:-1.5px;
 	    left: -0.5px;
 	}
 	.grid{
@@ -700,6 +700,7 @@ and (orientation : landscape){
 
 
 @media screen and (max-width: 800px) {
+
     .topnav {
     }
     .topnav .search-container {
@@ -724,6 +725,8 @@ and (orientation : landscape){
     }
     .topnav a.active:nth-of-type(1) {
       margin-left: 0;
+	    top:-0.5px;
+	    left: 0px;
     } 
     .topnav a.active {
       display: inline-block;
