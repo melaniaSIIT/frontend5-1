@@ -74,6 +74,7 @@ window.addEventListener("load", function() {
       deleteBtn.setAttribute("class", "admin-button delete-button");
 	  deleteBtn.addEventListener("click", function() {
 		movie.deleteMovie(accessTokenCookieValue).then(function() {
+      alert(movie.title + "has been deleted!");
 			moviesModel.getAll().then(displayAllMovies);
 		});
 	  });
