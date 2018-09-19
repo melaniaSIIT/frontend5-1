@@ -316,6 +316,7 @@ span{
   color: black;
   opacity: 1;
   display: none;
+  cursor: default;
 }
 #logout:hover{
   cursor: pointer;
