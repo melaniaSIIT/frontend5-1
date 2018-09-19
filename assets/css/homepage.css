@@ -321,30 +321,8 @@ span{
 #logout:hover{
   cursor: pointer;
   color: #7a0d5b;
-  transition: 1s;
-}
-
-<<<<<<< HEAD
-#greeter{
-  float:right;
-  position: relative;
-  z-index:3;
-  font-size: 0.8em;
-  top: 14px;
-  color: black;
-  opacity: 1;
-  display: none;
-  transition: 2s;
-}
-#log-out:hover{
-  cursor: pointer;
-  color: #693d3d;
   transition: 1.33s;
 }
-=======
-
-
->>>>>>> 056982d03ec070b66aa4bfd7b111b1e8579c4b57
 
 form {
   display: none;
@@ -378,11 +356,6 @@ form {
 
 .pagination a:hover:not(.active) {background-color: rgb(202, 202, 202);}
 
-
-
-
-
-
 @media screen and (max-width: 1024px) {
     .topnav {
       height: 94px;
@@ -412,7 +385,7 @@ form {
     } 
     .topnav a.active {
       display: inline-block;
-      float:left;
+      float: left;
       text-align: center;
       width: 33%;
       height: 43px;

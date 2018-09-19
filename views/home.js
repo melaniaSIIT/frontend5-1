@@ -175,12 +175,5 @@ window.addEventListener("load", function() {
         displayAllMovies(response.results);
         console.log(response.results);
       });
-<<<<<<< HEAD
-
-      
-  });
-    
-=======
     });
->>>>>>> 056982d03ec070b66aa4bfd7b111b1e8579c4b57
-});
+})
