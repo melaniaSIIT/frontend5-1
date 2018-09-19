@@ -147,14 +147,20 @@ body {
 .topnav a.active:nth-of-type(2) {
     float: right;
     margin-right: 22px;
+    position: relative;
+    left: -1px;
 }
 .topnav a.active:nth-of-type(3) {
     float: right;
+    position: relative;
+    left: -1px;
 }
 
 /* Search bar */
 .topnav .search-container {
     float: right;
+    position: relative;
+    left: -1px;
   }
   
   .topnav input[type=text] {
@@ -194,6 +200,20 @@ body {
     }
   }
 
+  #greeter{
+    float:right;
+    margin-right: 1em;
+    position: relative;
+    right: 17px;
+    z-index:3;
+    font-size: 0.8em;
+    top: 14px;
+    color: black;
+    opacity: 1;
+    display: none;
+    transition: 2s;
+  }
+  
 
 article {
     background-color: rgba(120, 170, 173, 0.3);
@@ -201,30 +221,15 @@ article {
     padding: 20px;
     float: left;
     background-size: 100%;
-    border: 3px solid #262626;
-    font-size: 20px;
     margin-left: 3%;
+    margin-top: 1.5em;
+    box-shadow: -2px 3px 2px 1px rgba(0,0,0,0.1);
     color: #00171c;
     font-size: 0.65em;
     opacity: 0.85;
+    font-weight: 700;
 }
 
-aside {
-    background-color: rgba(120, 170, 173, 0.3);
-    background-size: 100%;
-    float: right;
-    width: 37%;
-    padding: 1px;
-    padding-top: 0.5em;
-    border: 3px solid #262626;
-    text-align: center;
-    font-size: 18px;
-    min-height: 3em;
-    margin-right: 3%;
-    color: #00171c;
-    font-size: 1em;
-    opacity: 0.85;
-}
 
 .actionButtonClass {
     cursor: pointer;
@@ -234,10 +239,20 @@ aside {
     background-color: white;
     color: black;
     border: 2px solid #262626;
-    font-size: 15px;
+    font-size: 16px;
     margin: 10px;
     opacity: 1;
+    padding: 8px 15px;
 }
+
+#editButtonId {
+    display: none;
+}
+
+#deleteButtonId {
+    display: none;
+}
+
 
 .actionButtonClass:hover {
     background-color: #262626;
@@ -247,11 +262,11 @@ aside {
 }
 
 #title-logo{
-    width: 18%;
+    width: 17.8%;
     position: relative;
     z-index: -3;
-    left: 12%;
-    top: 12%;
+    left: 18.15%;
+    top: 0.35em;
 }
 
 /* #movieTitleId {
@@ -273,34 +288,11 @@ textarea {
     clear: both;
   }
 
-.rating > span:hover:before {
-    content: "\2605";
-    position: absolute;
- }
-
-.rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-}
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
-}
-
-.rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-}
-.rating > span {
-  display: inline-block;
-  position: relative;
-  width: 1.1em;
-}
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
+/* Log-Out */
+#logout:hover{
+    cursor: pointer;
+    color: #7a0d5b;
+    transition: 1s;
 }
 
 @media screen and (max-width: 567px) {
@@ -324,7 +316,6 @@ textarea {
         width: 50%;
         display: block;
         clear: both;
-        border-bottom: 1px solid white;
     } 
     .topnav a.active:nth-of-type(2) {
         float: left;
@@ -333,7 +324,6 @@ textarea {
         float: left;
         border-bottom: none;
     }
-  
     p{
       font-size: 0.8em;
       text-align: left;
@@ -348,27 +338,211 @@ textarea {
       left: 0;
     } */
     h2{
-        font-size: 0.85em;
+      font-size: 0.85em;
     }
     img {
-        position: relative;
-        top:0.5em;
+      position: relative;
+      top:0.5em;
     }
     button{
-        position: relative;
-        top:1em;
+      position: relative;
+      top:1em;
     }
-    aside {
-        padding-top: 20px;
-        padding-bottom: 18px;
+
+    article{
+      display: block;
+      clear:both;
+      width: 80%;
+      margin-left: 10%;
+      margin-top: 10%;
+      float: none;
     }
-    article, aside{
-        display: block;
-        clear:both;
-        width: 80%;
-        margin-left: 10%;
-        margin-top: 10%;
-        float: none;
+
+    #greeter{
+      float:none;
+      margin-left: 10px;
+    }
+     #home, #register, #login {
+      width: 8.5em;
+      text-align: center;
+      margin-left: 10px;
+    }
+    #searchButton {
+      top: 20px;
+      left: 100px;
     }
 
 }
+
+
+
+@media screen and (max-width: 800px) {
+    .topnav {
+      height: 94px;
+    }
+    .topnav .search-container {
+      float: right;
+      position: relative;
+      right: 0;
+      top: -16px;
+    }
+    .topnav a, .topnav input[type=text] {
+      float: none;
+      display: block;
+      text-align: left;
+      padding: 14px;
+      font-size: 14px;
+      min-width: 0;
+      margin: 0;
+      width: 46px;
+    }
+    #flex-container {
+      margin: 4.5em;
+      margin-left: 75px;
+    }
+    .topnav a.active:nth-of-type(1) {
+      margin-left: 0;
+    } 
+    .topnav a.active {
+      display: inline-block;
+      float:left;
+      text-align: center;
+      width: 33%;
+      height: 43px;
+      color: black;
+      background-color: transparent;
+      margin-top: 0px;
+    }
+    .topnav a.active:hover {
+      background-color: transparent;
+      color: black;
+      text-decoration: underline;
+    }
+    
+    .topnav a.active:nth-of-type(2) {
+      float: none;
+    }
+   
+    .topnav a.active:nth-of-type(3) {
+      float: left;
+    }
+   
+    p{
+      font-size: 0.8em;
+    }
+   
+   
+    #greeter{
+      float: none;
+      top: 12px;
+      left: 219px;
+      font-size: 0.65em;
+    }
+
+    #add-movies {
+      position: fixed;
+      right: 1px;
+      top: 3.4em;
+      font-size: 0.6em;
+      left: 22px;
+      z-index: 4;
+      background-color: transparent;
+      color: black;
+    }
+   
+    #searchButton {
+      padding: 13.6px;
+      float: none;
+      display: block;
+      text-align: left;
+      width: 46px;
+      margin: 0;
+    }
+    .topnav input[type=text], #searchButton {
+      position: relative;
+      top: 17px;
+    }
+     .topnav input[type=text] {
+      border: 1px solid #ccc;
+      width: 150px;
+      float: left;
+      height: 48px;
+      top: 17px;
+    }
+
+}
+@media screen and (max-width: 510px) {
+    #title-logo {
+      display: none;
+    }
+}
+
+
+@media screen and (max-width: 376px) {
+    #flex-container {
+      margin-left: 50px;
+    }
+     #greeter {
+      left: 200px;
+    }
+}
+@media screen and (max-width: 350px) {
+    #greeter {
+        left: 151px;
+    }
+}
+@media screen and (max-width: 321px) {
+    #title-logo {
+      width: 65px;
+      top: 1.5px;
+    }
+    #flex-container {
+      margin-left: 28px;
+    }
+    #add-movies {
+      left: 10px;
+    }
+    #greeter {
+      left: 150px;
+      top: 8px;
+    }
+}
+
+@media screen and (max-width: 310px) {
+    #flex-container {
+       margin-left: 5px;
+    }
+}
+
+@media screen and (orientation : landscape)
+  and (max-width: 1024px) {
+    #add-movies {
+      left: 0;
+    }
+    #greeter {
+      float: right;
+    }
+    .topnav {
+      min-height: 85px;
+    }
+    #home {
+      width: 10%;
+    }
+}
+
+@media screen and (min-width: 556px)
+  and (max-width: 1023px) {
+    #greeter {
+      top: 65px;
+      left: 28%;
+    }
+}
+
+@media screen and (orientation : landscape) 
+ and (max-width: 570px) {
+     #greeter {
+      top: 65px;
+      left: 33%;
+    }
+ }
+

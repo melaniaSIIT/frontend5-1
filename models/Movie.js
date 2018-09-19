@@ -31,9 +31,23 @@ function Movie(options) {
     })
   }
 
-  Movie.prototype.updateMovie = function(data) {
-    var that = this;
-    return $.put("https://ancient-caverns-16784.herokuapp.com/movies/" + this.id, {
+  Movie.prototype.saveMovie = function _ajax_request(token) {
+    return $.ajax({
+    url: "https://ancient-caverns-16784.herokuapp.com/movies/" + this.id,
+    headers: {
+      "x-auth-token": token
+    },
+    type: "PUT",
+    success: function(response){
+      alert ("Changes have been made successful!");
+      window.location = "../pages/home.html#home";
+      console.log(response);
+     }
+    });
+  }
+
+  Movie.prototype.updateMovie = function(token, data) {
+    return $.delete( {
       data
     })
     .then(function(response){
@@ -43,19 +57,16 @@ function Movie(options) {
     });
   }
 
-  $.put = function(url, data, callback, type) {
-
-    if ($.isFunction(data)) {
-      type = type || callback,
-        callback = data,
-        data = {}
-    }
-  
-    return $.ajax({
-      url: url,
-      type: 'PUT',
-      success: callback,
-      data: data,
-      contentType: type
-    });
+  Movie.prototype.deleteMovie = function(token){
+	return $.ajax({
+		url: "https://ancient-caverns-16784.herokuapp.com/movies/" + this.id,
+		type: 'DELETE',
+		headers: {
+			  "x-auth-token": token
+		},
+		success: function(result) {
+				 console.log(result);
+		}
+	});
   }
+
