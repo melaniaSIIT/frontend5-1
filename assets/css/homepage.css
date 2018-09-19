@@ -500,7 +500,8 @@ form {
     }
 }
 
-@media screen and (orientation : landscape) {
+@media screen and (orientation : landscape)
+  and (max-width: 1024px) {
     #add-movies {
       left: 0;
     }
