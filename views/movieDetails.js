@@ -116,7 +116,7 @@ window.addEventListener("load", function() {
           actionContainer.appendChild(saveButton);
           containerEl.appendChild(actionContainer);
 
-          saveButton.addEventListener("click", function(accessTokenCookieValue){
+          saveButton.addEventListener("click", function(){
             movie.saveMovie(bodyEl.value)
           });
         } else {

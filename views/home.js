@@ -78,11 +78,20 @@ window.addEventListener("load", function() {
 		});
 	  });
 
+    // moreInfoButton
+    let moreInfoButton = document.createElement('button');
+    moreInfoButton.innerHTML = "More Info";
+    moreInfoButton.setAttribute("class", "admin-button");
+    moreInfoButton.style.display = "inline-block";
+    
+    moreInfoButton.addEventListener("click", function(){
+      window.location = "../pages/movieDetails.html?movieId=" + movie.id;
+    });
 
-      let adminButtons = document.createElement('div');
-      adminButtons.appendChild(editBtn);
-      adminButtons.appendChild(deleteBtn);
-
+    let adminButtons = document.createElement('div');
+    adminButtons.appendChild(editBtn);
+    adminButtons.appendChild(deleteBtn);
+    adminButtons.appendChild(moreInfoButton);
 
       let item = document.createElement('div');
       
@@ -114,6 +123,7 @@ window.addEventListener("load", function() {
       let idEl = document.createElement('p');
       idEl.innerHTML = movie.id;
       
+      // item.appendChild(moreInfoButton);
       
 
         
