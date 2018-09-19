@@ -1,4 +1,4 @@
-/*/ Desktops and laptops ----------- /*/
+/ Desktops and laptops ----------- /*/
 @media only screen  and (min-width : 1224px) {
 
 }
@@ -546,20 +546,4 @@ form {
       left: 43.5%;
     }
 
-  }
-
-  @media screen and (min-width:1024px)
-  and (orientation : landscape) {
-     
-    #greeter {
-      top: 65px;
-      left: 18.5%;
-    }
-  }
-
-  @media screen and (min-height:1335px)
-  and (max-height:1350px){
-    #add-movies {
-      left: 117px;
-    }
   }
