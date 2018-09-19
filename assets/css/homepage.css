@@ -195,6 +195,7 @@ span{
   padding: 7px 5px;
   min-width: 75px; 
   opacity:0.85;
+  cursor: pointer;
 }
 .admin-button:hover {
   color: #fff;
@@ -250,7 +251,7 @@ span{
 
 /* Change the color of links on hover */
 .topnav a:hover {
-    background-color: #ddds;
+    background-color: #ddd;
     color: black;
 }
 
