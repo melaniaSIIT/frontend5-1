@@ -204,6 +204,7 @@ body {
     float:right;
     margin-right: 1em;
     position: relative;
+    right: 17px;
     z-index:3;
     font-size: 0.8em;
     top: 14px;
@@ -238,10 +239,10 @@ article {
     background-color: white;
     color: black;
     border: 2px solid #262626;
-    font-size: 15px;
+    font-size: 16px;
     margin: 10px;
     opacity: 1;
-    padding: 5px;
+    padding: 8px 15px;
 }
 
 #editButtonId {
@@ -339,39 +340,45 @@ textarea {
       left: 0;
     } */
     h2{
-        font-size: 0.85em;
+      font-size: 0.85em;
     }
     img {
-        position: relative;
-        top:0.5em;
+      position: relative;
+      top:0.5em;
     }
     button{
-        position: relative;
-        top:1em;
+      position: relative;
+      top:1em;
     }
 
     article{
-        display: block;
-        clear:both;
-        width: 80%;
-        margin-left: 10%;
-        margin-top: 10%;
-        float: none;
+      display: block;
+      clear:both;
+      width: 80%;
+      margin-left: 10%;
+      margin-top: 10%;
+      float: none;
     }
 
     #greeter{
-        float:none;
-        margin-left: 10px;
-      }
-      #home, #register, #login {
-        width: 8.5em;
-        text-align: center;
-        margin-left: 10px;
-      }
-      #searchButton {
-        top: 20px;
-        left: 100px;
-      }
+      float:none;
+      margin-left: 10px;
+    }
+     #home, #register, #login {
+      width: 8.5em;
+      text-align: center;
+      margin-left: 10px;
+    }
+    #searchButton {
+      top: 20px;
+      left: 100px;
+    }
 
 }
 
+
+
+
+@media screen and (max-width: 1367px) {
+
+}

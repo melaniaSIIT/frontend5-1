@@ -23,6 +23,7 @@ window.addEventListener("load", function() {
       $('#login').css('display','none');
       $('#register').css('display','none');
       $('#greeter').css('display','inline-block');
+      $('.search-container').css('left','-17px');
       $('#greeter').html(`Hello ${usernameCookieValue} | <span id='logout'>Log out</span>`);
     }
 

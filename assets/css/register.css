@@ -458,8 +458,8 @@ and (-webkit-device-pixel-ratio: 3){
 
 /*//Microsoft Lumia 950 size*/
 @media only screen 
-and (min-device-width: 360px) 
-and (max-device-height: 640px) 
+and (min-device-width: 280px) 
+and (max-device-height: 840px) 
 {
 	.container{
 		width: 80%;
@@ -481,11 +481,11 @@ and (max-device-height: 640px)
 	    display: inline-block;
 	}
 	info:nth-of-type(1) {
-	    top: 41vh;
+	    top: 20em;
 	    left: 10%;
 	}
 	info:nth-of-type(2) {
-	    top: 43.75vh;
+	    top: 21.5em;
 	    left: 10%;
 	}
 }
@@ -502,7 +502,7 @@ and (orientation : landscape){
 	}		
 	#small-arrow {
 		top:5px;
-    	width: 6%;
+    	width: 5%;
 	}
 }
 
