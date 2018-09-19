@@ -84,14 +84,14 @@ window.addEventListener("load", function() {
           inputField = document.createElement("textarea");
           // if the value is undefined, the input should not be filled with undefined or NaN
           // will be filled with its property (with the placeholder)
-          if(movieDetails[movieProperty] !== undefined && movieDetails[movieProperty] !== NaN) {
+          if(movieDetails[movieProperty] !== undefined && movieDetails[movieProperty] !== "N/A") {
             inputField.innerHTML = movieDetails[movieProperty];
           }
         } else {
           inputField = document.createElement("input");
           // if the value is undefined, the input should not be filled with undefined or NaN
           // will be filled with its property (with the placeholder)
-          if(movieDetails[movieProperty] !== undefined && movieDetails[movieProperty] !== NaN) {
+          if(movieDetails[movieProperty] !== undefined && movieDetails[movieProperty] !== "N/A") {
             inputField.setAttribute("value", movieDetails[movieProperty]);
           }
         }
@@ -137,7 +137,7 @@ window.addEventListener("load", function() {
         var textField = document.createElement("p");
         // if the value is undefined, the input should not be filled with undefined or NaN
         // will be filled with its property (with the placeholder)
-        if(movieDetails[movieProperty] !== undefined && movieDetails[movieProperty] !== NaN) {
+        if(movieDetails[movieProperty] !== undefined && movieDetails[movieProperty] !== "N/A") {
           //making first letter of the property name, upperchase
           var upperChaseProperty = movieProperty.charAt(0).toUpperCase() + movieProperty.slice(1);
           textField.innerHTML =  upperChaseProperty + ": " + movieDetails[movieProperty];
