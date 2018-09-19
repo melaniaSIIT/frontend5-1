@@ -362,7 +362,7 @@ form {
 
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
     .topnav {
       height: 94px;
     }
@@ -438,7 +438,6 @@ form {
    
     #searchButton {
       padding: 13.6px;
-      float: none;
       display: block;
       text-align: left;
       width: 46px;
@@ -520,7 +519,7 @@ form {
   and (max-width: 1023px) {
     #greeter {
       top: 65px;
-      left: 28%;
+      left: 24%;
     }
 }
 
@@ -531,3 +530,30 @@ form {
       left: 33%;
     }
  }
+
+
+ /*TABLETS */
+
+ @media screen and (min-width:768px)
+  and (max-width: 1023px)
+  and (min-height: 376px) {
+     #add-movies {
+      left: 76px;
+    }
+    #greeter {
+      top: 58px;
+      left: 43.5%;
+    }
+
+  }
+
+  @media screen and (min-width:1024px)
+  and (orientation : landscape) {
+      #add-movies {
+        left: 8px;
+      }
+    #greeter {
+      top: 65px;
+      left: 18.5%;
+    }
+  }
