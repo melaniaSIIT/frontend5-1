@@ -538,7 +538,7 @@ form {
  @media screen and (min-width:768px)
   and (max-width: 1023px)
   and (min-height: 376px) {
-     #add-movies {
+    #add-movies {
       left: 76px;
     }
     #greeter {
@@ -550,11 +550,16 @@ form {
 
   @media screen and (min-width:1024px)
   and (orientation : landscape) {
-      #add-movies {
-        left: 8px;
-      }
+     
     #greeter {
       top: 65px;
       left: 18.5%;
+    }
+  }
+
+  @media screen and (min-height:1335px)
+  and (max-height:1350px){
+    #add-movies {
+      left: 117px;
     }
   }
