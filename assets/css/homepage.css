@@ -1,4 +1,4 @@
-/*/ Desktops and laptops ----------- /*/
+/* Desktops and laptops ----------- /*
 @media only screen  and (min-width : 1224px) {
 
 }
@@ -195,6 +195,7 @@ span{
   padding: 7px 5px;
   min-width: 75px; 
   opacity:0.85;
+  cursor: pointer;
 }
 .admin-button:hover {
   color: #fff;
@@ -250,7 +251,7 @@ span{
 
 /* Change the color of links on hover */
 .topnav a:hover {
-    background-color: #ddds;
+    background-color: #ddd;
     color: black;
 }
 
@@ -315,15 +316,13 @@ span{
   color: black;
   opacity: 1;
   display: none;
+  cursor: default;
 }
 #logout:hover{
   cursor: pointer;
   color: #7a0d5b;
-  transition: 1s;
+  transition: 1.33s;
 }
-
-
-
 
 form {
   display: none;
@@ -357,12 +356,7 @@ form {
 
 .pagination a:hover:not(.active) {background-color: rgb(202, 202, 202);}
 
-
-
-
-
-
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
     .topnav {
       height: 94px;
     }
@@ -391,7 +385,7 @@ form {
     } 
     .topnav a.active {
       display: inline-block;
-      float:left;
+      float: left;
       text-align: center;
       width: 33%;
       height: 43px;
@@ -438,7 +432,6 @@ form {
    
     #searchButton {
       padding: 13.6px;
-      float: none;
       display: block;
       text-align: left;
       width: 46px;
@@ -520,7 +513,7 @@ form {
   and (max-width: 1023px) {
     #greeter {
       top: 65px;
-      left: 28%;
+      left: 24%;
     }
 }
 
@@ -531,3 +524,19 @@ form {
       left: 33%;
     }
  }
+
+
+ /*TABLETS */
+
+ @media screen and (min-width:768px)
+  and (max-width: 1023px)
+  and (min-height: 376px) {
+    #add-movies {
+      left: 76px;
+    }
+    #greeter {
+      top: 58px;
+      left: 43.5%;
+    }
+
+  }

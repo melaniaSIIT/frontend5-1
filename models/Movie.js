@@ -31,46 +31,40 @@ function Movie(options) {
     })
   }
 
-  Movie.prototype.updateMovie = function(data) {
-    var that = this;
-    return $.put("https://ancient-caverns-16784.herokuapp.com/movies/" + this.id, {
-      data
-    })
-    .then(function(response){
-      console.log(response);
-      alert ("Changes have been made successful!");
-      window.location = "../pages/home.html#home";
-    });
-  }
-
-  $.put = function(url, data, callback, type) {
-
-    if ($.isFunction(data)) {
-      type = type || callback,
-        callback = data,
-        data = {}
-    }
-  
+  Movie.prototype.updateMovie = function (token, data, movieId) {
+    var movieUrl = "https://ancient-caverns-16784.herokuapp.com/movies/" + movieId;
+    // console.log(movieUrl);
+    // console.log(data);
     return $.ajax({
-      url: url,
-      type: 'PUT',
-      success: callback,
-      data: data,
-      contentType: type
-    });
-  }
-
-
-
-  Movie.prototype.updateMovie = function(token, data) {
-    return $.delete( {
-      data
-    })
-    .then(function(response){
-      console.log(response);
-      alert ("Changes have been made successful!");
-      window.location = "../pages/home.html#home";
-    });
+    url: movieUrl,
+    headers: {
+      "x-auth-token": token,
+      // "Content-Type": "text"
+    },
+    type: "PUT",
+    data: data,
+    // success: function(result, textStatus){
+    //   console.log(result);
+    //   console.log("textStatus= " + textStatus);
+    //  }, 
+     complete: function(result) {
+      if(result.status == 200) {
+        // alert ("Changes have been made successful!");
+        console.log(result);
+        var message = result.responseText.substring(1,result.responseText.length - 2);
+        // message = message.replace(":", "=");
+        // message = message.replace('"', ' ');
+        window.location = "../pages/movieDetails.html?movieId=" + movieId;
+        // window.location = "../pages/movieDetails.html?movieId=" + this.id;
+        alert ("The movie was updated: " + message);
+      } else {
+        alert ("There were no changes to update");
+        window.location = "../pages/movieDetails.html?movieId=" + movieId + "&edit=true";
+      }
+      console.log(result.status);
+      console.log(result);
+      } 
+    }) 
   }
 
   Movie.prototype.deleteMovie = function(token){
@@ -81,7 +75,8 @@ function Movie(options) {
 			  "x-auth-token": token
 		},
 		success: function(result) {
-				 console.log(result);
+				console.log(result);
 		}
 	});
   }
+

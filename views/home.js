@@ -74,15 +74,25 @@ window.addEventListener("load", function() {
       deleteBtn.setAttribute("class", "admin-button delete-button");
 	  deleteBtn.addEventListener("click", function() {
 		movie.deleteMovie(accessTokenCookieValue).then(function() {
+      alert(movie.title + "has been deleted!");
 			moviesModel.getAll().then(displayAllMovies);
 		});
 	  });
 
+    // moreInfoButton
+    let moreInfoButton = document.createElement('button');
+    moreInfoButton.innerHTML = "More Info";
+    moreInfoButton.setAttribute("class", "admin-button");
+    moreInfoButton.style.display = "inline-block";
+    
+    moreInfoButton.addEventListener("click", function(){
+      window.location = "../pages/movieDetails.html?movieId=" + movie.id;
+    });
 
-      let adminButtons = document.createElement('div');
-      adminButtons.appendChild(editBtn);
-      adminButtons.appendChild(deleteBtn);
-
+    let adminButtons = document.createElement('div');
+    adminButtons.appendChild(editBtn);
+    adminButtons.appendChild(deleteBtn);
+    adminButtons.appendChild(moreInfoButton);
 
       let item = document.createElement('div');
       
@@ -114,6 +124,7 @@ window.addEventListener("load", function() {
       let idEl = document.createElement('p');
       idEl.innerHTML = movie.id;
       
+      // item.appendChild(moreInfoButton);
       
 
         
@@ -154,20 +165,25 @@ window.addEventListener("load", function() {
 
     
 
+    
+    // SEARCH MOVIE by title
 
-    // SEARCH MOVIE
     $('#searchButton').on('click', function() {
       let searchFor = $('#search').val(); 
       let newMovies = new Movies();
-      newMovies.searchByTitle(searchFor).then(function(response) {
+      newMovies.searchBy(searchFor).then(function(response) {
         containerElement.innerHTML = '';
         displayAllMovies(response.results);
         console.log(response.results);
       });
     });
+<<<<<<< HEAD
 
     // ADD MOVIE
     $('#add-movies').on('click', function() {
       window.open("../pages/addMovie.html","_self");
     });
 });
+=======
+})
+>>>>>>> d67e2aaf65b9af31884e0ce7726d0d55c97b080d
