@@ -165,4 +165,9 @@ window.addEventListener("load", function() {
         console.log(response.results);
       });
     });
+
+    // ADD MOVIE
+    $('#add-movies').on('click', function() {
+      window.open("../pages/addMovie.html","_self");
+    });
 });
