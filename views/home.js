@@ -177,13 +177,11 @@ window.addEventListener("load", function() {
         console.log(response.results);
       });
     });
-<<<<<<< HEAD
 
     // ADD MOVIE
     $('#add-movies').on('click', function() {
       window.open("../pages/addMovie.html","_self");
     });
 });
-=======
-})
->>>>>>> d67e2aaf65b9af31884e0ce7726d0d55c97b080d
+
+
