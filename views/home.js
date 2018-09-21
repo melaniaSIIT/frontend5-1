@@ -11,6 +11,39 @@ window.addEventListener("load", function() {
     // get container for all movies
     let containerElement = document.getElementById("flex-container");
     let moviesModel = new Movies();
+  
+  // Display pagination
+  const PAGE_ITEMS = 12;
+  currentUrl = $(location).attr("href");
+  let pageRef = currentUrl.substr(currentUrl.length - 7);
+  let idx = currentUrl.indexOf("#")
+  let hash = idx != -1 ? currentUrl.substring(idx+1) : "";
+  let skipPages = hash.split('-')[1]
+  
+  if (typeof skipPages == "undefined"){
+    skipPages = 0;
+  }
+
+  skipValue = skipPages * PAGE_ITEMS;
+
+  function displayPagination (movies) {
+    const pagination = movies.pagination;
+
+    const prev = pagination.links.prev;
+    const next = pagination.links.next;
+
+    let paginationHTML = prev ? `<a href="${prev}">&laquo;</a>` : ``
+    for (let i = 1; i < pagination.numberOfPages; i++) {
+      paginationHTML += `<a href="#page-${i}" data-value="${i}">${i}</a>`
+    } 
+    paginationHTML += next ? `<a href="${next}">&raquo;</a>` : ``
+    $('.pagination').html(paginationHTML);
+    
+    $('a', '.pagination').click(function(){
+      location.reload();
+    });
+    
+  }
 
 	function displayAllMovies(movies) {
 	  containerElement.innerHTML = "";
@@ -22,21 +55,13 @@ window.addEventListener("load", function() {
       hideSpinner();
     }
 
-    currentUrl = $(location).attr("href");
-    let pageRef = currentUrl.substr(currentUrl.length - 7);
-    let skipPages = $("a[href='" + pageRef + "']").data("value");
-    if (typeof skipPages == "undefined"){
-      skipPages = 0;
-    }
+   
 
-    skipValue = skipPages;
-
-    $('a', '.pagination').click(function(){
-      location.reload();
-    });
-
-    moviesModel.getAll(takeValue, skipValue).then(displayAllMovies);
-
+    moviesModel.getAll(PAGE_ITEMS, skipValue).then((movies) => {
+      displayPagination(movies);
+      displayAllMovies(movies);
+    })
+    
     // Shows admin only buttons for each movie: edit, delete, 
     function showAdminButtons(){
        if(Cookies.get("authenticated")){
