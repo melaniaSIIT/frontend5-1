@@ -14,7 +14,12 @@ window.addEventListener("load", function() {
       }
     }
 
+
     checkIfSearchIsPresent()
+
+
+  let accessTokenCookieValue = Cookies.get("accessToken");
+
 
     // function that hides spinner must be called after games are loaded on screen, at the end of display all movies function
     function hideSpinner(){
@@ -24,6 +29,39 @@ window.addEventListener("load", function() {
     // get container for all movies
     let containerElement = document.getElementById("flex-container");
     let moviesModel = new Movies();
+  
+  // Display pagination
+  const PAGE_ITEMS = 12;
+  currentUrl = $(location).attr("href");
+  let pageRef = currentUrl.substr(currentUrl.length - 7);
+  let idx = currentUrl.indexOf("#")
+  let hash = idx != -1 ? currentUrl.substring(idx+1) : "";
+  let skipPages = hash.split('-')[1]
+  
+  if (typeof skipPages == "undefined"){
+    skipPages = 0;
+  }
+
+  skipValue = skipPages * PAGE_ITEMS;
+
+  function displayPagination (movies) {
+    const pagination = movies.pagination;
+
+    const prev = pagination.links.prev;
+    const next = pagination.links.next;
+
+    let paginationHTML = prev ? `<a href="${prev}">&laquo;</a>` : ``
+    for (let i = 0; i < pagination.numberOfPages; i++) {
+      paginationHTML += `<a href="#page-${i}" data-value="${i}">${i+1}</a>`
+    } 
+    paginationHTML += next ? `<a href="${next}">&raquo;</a>` : ``
+    $('.pagination').html(paginationHTML);
+    
+    $('a', '.pagination').click(function(){
+      location.reload();
+    });
+    
+  }
 
 	function displayAllMovies(movies) {
 	  containerElement.innerHTML = "";
@@ -34,6 +72,7 @@ window.addEventListener("load", function() {
       }
       hideSpinner();
     }
+
 
     currentUrl = $(location).attr("href");
     let pageRef = currentUrl.substr(currentUrl.length - 7);
@@ -52,6 +91,12 @@ window.addEventListener("load", function() {
       moviesModel.getAll(takeValue, skipValue).then(displayAllMovies);
     }
 
+
+    moviesModel.getAll(PAGE_ITEMS, skipValue).then((movies) => {
+      displayPagination(movies);
+      displayAllMovies(movies);
+    })
+    
     // Shows admin only buttons for each movie: edit, delete, 
     function showAdminButtons(){
        if(Cookies.get("authenticated")){
@@ -78,6 +123,7 @@ window.addEventListener("load", function() {
       deleteBtn.setAttribute("id", "delete-" + movie.id);
       deleteBtn.setAttribute("name", "Delete");
       deleteBtn.setAttribute("class", "admin-button delete-button");
+
 	    deleteBtn.addEventListener("click", function() {
         movie.deleteMovie(accessTokenCookieValue).then(function() {
           alert(movie.title + "has been deleted!");
@@ -90,6 +136,20 @@ window.addEventListener("load", function() {
       moreInfoButton.innerHTML = "More Info";
       moreInfoButton.setAttribute("class", "admin-button");
       moreInfoButton.style.display = "inline-block";
+
+	  deleteBtn.addEventListener("click", function() {
+		movie.deleteMovie(accessTokenCookieValue).then(function() {
+      alert(movie.title + "has been deleted!");
+      location.reload();
+		});
+	  });
+
+    // moreInfoButton
+    let moreInfoButton = document.createElement('button');
+    moreInfoButton.innerHTML = "More Info";
+    moreInfoButton.setAttribute("class", "admin-button");
+    moreInfoButton.style.display = "inline-block";
+
     
       moreInfoButton.addEventListener("click", function(){
         window.location = "../pages/movieDetails.html?movieId=" + movie.id;
