@@ -170,10 +170,19 @@ window.addEventListener("load", function() {
     $('#searchButton').on('click', function() {
       let searchFor = $('#search').val(); 
       let newMovies = new Movies();
-      newMovies.searchBy(searchFor).then(function(response) {
+      newMovies.searchByTitle(searchFor).then(function(response) {
         containerElement.innerHTML = '';
-        displayAllMovies(response.results);
+        displayAllMovies(response);
         console.log(response.results);
       });
     });
+
+    var input = document.getElementById("search");
+      input.addEventListener("keyup", function(event) {
+      event.preventDefault();
+      if (event.keyCode === 13) {
+        document.getElementById("searchButton").click();
+      }
+    });
+
 })

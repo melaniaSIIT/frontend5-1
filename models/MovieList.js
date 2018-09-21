@@ -11,7 +11,6 @@ Movies.prototype.getAll = function() {
 }
 
 
-Movies.prototype.searchBy = function(searchItem) {
-  return $.get("https://ancient-caverns-16784.herokuapp.com/movies?Title=" + searchItem /*+ "&Year=" + searchItem*/);
+Movies.prototype.searchByTitle = function(searchItem) {
+  return $.get("https://ancient-caverns-16784.herokuapp.com/movies?Title=" + searchItem);
 }
-
