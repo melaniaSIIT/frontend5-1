@@ -12,6 +12,8 @@
   <script type="text/javascript" src="../models/Movie.js"></script>
   <script type="text/javascript" src="../views/movieDetails.js"></script>
   <script type="text/javascript" src="../models/Auth.js"></script>
+  <script type="text/javascript" src="../models/MovieList.js"></script>
+  <script type="text/javascript" src="../views/home.js"></script>
   <script type="text/javascript" src="../views/login.js"></script>
   <script type="text/javascript" src="../views/login.js"></script>
   <script type="text/javascript" src="../views/register.js"></script>
@@ -24,6 +26,10 @@
       <a class="active" id="home" href="#home">Home</a>
       <a class="active" id="register">Register</a>
       <a class="active" id="login">Login</a>
+      <div class="search-container">
+        <input id="search" type="text" placeholder="Search.." name="search">
+        <button id="searchButton" type="submit"><i class="fa fa-search"></i></button>
+      </div>
       <div id='greeter'></div>
   </div>
 
@@ -32,8 +38,6 @@
         <ul id="movie-details"> </ul>
     </section>
   </article>
-
-
 
   <img id="title-logo" src="../assets/images/title-logo.png" alt="Movies-heading-logo">
 

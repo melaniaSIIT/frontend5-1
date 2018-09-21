@@ -212,6 +212,24 @@ window.addEventListener("load", function() {
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
   }
 
+
+  // SEARCH MOVIE by title
+
+  $('#searchButton').on('click', function() {
+    let searchFor = $('#search').val(); 
+    location.href = `home.html?search=${searchFor}`
+  });
+
+
+  var input = document.getElementById("search");
+    input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+      document.getElementById("searchButton").click();
+    }
+  });
+
+
 });
 
 

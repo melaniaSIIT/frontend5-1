@@ -1,11 +1,24 @@
 window.addEventListener("load", function() {
+  
+    let isSearching = false;
+    
+    function checkIfSearchIsPresent() {
+      const search = location.search.substr(1);
+      const attribute = search.split('=')[0];
+      const searchValue = search.split('=')[1];
 
+      if (attribute === 'search') {
+        isSearching = true
+        $('#search').val(searchValue);
+        searchMovies(searchValue);
+      }
+    }
 
-
+    checkIfSearchIsPresent()
 
     // function that hides spinner must be called after games are loaded on screen, at the end of display all movies function
     function hideSpinner(){
-    $('.loader').css('display','none');
+      $('.loader').css('display','none');
     }
 
     // get container for all movies
@@ -35,7 +48,9 @@ window.addEventListener("load", function() {
       location.reload();
     });
 
-    moviesModel.getAll(takeValue, skipValue).then(displayAllMovies);
+    if (isSearching === false) {
+      moviesModel.getAll(takeValue, skipValue).then(displayAllMovies);
+    }
 
     // Shows admin only buttons for each movie: edit, delete, 
     function showAdminButtons(){
@@ -63,27 +78,27 @@ window.addEventListener("load", function() {
       deleteBtn.setAttribute("id", "delete-" + movie.id);
       deleteBtn.setAttribute("name", "Delete");
       deleteBtn.setAttribute("class", "admin-button delete-button");
-	  deleteBtn.addEventListener("click", function() {
-		movie.deleteMovie(accessTokenCookieValue).then(function() {
-      alert(movie.title + "has been deleted!");
-			moviesModel.getAll().then(displayAllMovies);
-		});
-	  });
+	    deleteBtn.addEventListener("click", function() {
+        movie.deleteMovie(accessTokenCookieValue).then(function() {
+          alert(movie.title + "has been deleted!");
+          moviesModel.getAll().then(displayAllMovies);
+        });
+	    });
 
-    // moreInfoButton
-    let moreInfoButton = document.createElement('button');
-    moreInfoButton.innerHTML = "More Info";
-    moreInfoButton.setAttribute("class", "admin-button");
-    moreInfoButton.style.display = "inline-block";
+      // moreInfoButton
+      let moreInfoButton = document.createElement('button');
+      moreInfoButton.innerHTML = "More Info";
+      moreInfoButton.setAttribute("class", "admin-button");
+      moreInfoButton.style.display = "inline-block";
     
-    moreInfoButton.addEventListener("click", function(){
-      window.location = "../pages/movieDetails.html?movieId=" + movie.id;
-    });
+      moreInfoButton.addEventListener("click", function(){
+        window.location = "../pages/movieDetails.html?movieId=" + movie.id;
+      });
 
-    let adminButtons = document.createElement('div');
-    adminButtons.appendChild(editBtn);
-    adminButtons.appendChild(deleteBtn);
-    adminButtons.appendChild(moreInfoButton);
+      let adminButtons = document.createElement('div');
+      adminButtons.appendChild(editBtn);
+      adminButtons.appendChild(deleteBtn);
+      adminButtons.appendChild(moreInfoButton);
 
       let item = document.createElement('div');
       
@@ -96,11 +111,11 @@ window.addEventListener("load", function() {
       });
       
       let imgEl = document.createElement('img');
-        $(imgEl).attr({
-          "src":movie.posterUrl,
-          "height":"200",
-          "alt":"Movie Image here",
-        });  
+      $(imgEl).attr({
+        "src":movie.posterUrl,
+        "height":"200",
+        "alt":"Movie Image here",
+      });  
       
       let bodyEl = document.createElement('p');
       bodyEl.innerHTML = "Genre: " + movie.genre;
@@ -110,14 +125,11 @@ window.addEventListener("load", function() {
 
       let ratingEl = document.createElement('p');
       ratingEl.innerHTML = "IMDB Rating: " + movie.rating;
-
       
       let idEl = document.createElement('p');
       idEl.innerHTML = movie.id;
       
       // item.appendChild(moreInfoButton);
-      
-
         
       item.appendChild(titleEl);
       item.appendChild(bodyEl);
@@ -130,22 +142,25 @@ window.addEventListener("load", function() {
      
       containerElement.appendChild(item);
       showAdminButtons();
-
-
     }
   
     // SEARCH MOVIE by title
 
     $('#searchButton').on('click', function() {
-      let searchFor = $('#search').val(); 
+      let searchFor = $('#search').val();
+      searchMovies(searchFor)
+    });
+
+    function searchMovies(searchFor) {
+      isSearching = true
       let newMovies = new Movies();
       newMovies.searchByTitle(searchFor).then(function(response) {
         containerElement.innerHTML = '';
         displayAllMovies(response);
-        console.log(response.results);
+        isSearching = false;
+        history.pushState({}, document.title, "home.html");      
       });
-    });
-
+    }
 
     var input = document.getElementById("search");
       input.addEventListener("keyup", function(event) {
@@ -159,7 +174,6 @@ window.addEventListener("load", function() {
     $('#add-movies').on('click', function() {
       window.open("../pages/addMovie.html","_self");
     });
-
 })
 
 
