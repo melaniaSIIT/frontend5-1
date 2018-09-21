@@ -2,22 +2,11 @@ window.addEventListener("load", function() {
 
 
 
-     // these are the 3 cookies now available on homepage, to do with them as u please
-     // extract them first so page doesn't have to delay painting because it doesnt yet have the cookies
-    let usernameCookieValue = Cookies.get("username");
-    let authenticatedCookieValue = Cookies.get("authenticated");
-    let accessTokenCookieValue = Cookies.get("accessToken");
-    console.log(usernameCookieValue,authenticatedCookieValue,accessTokenCookieValue);
 
     // function that hides spinner must be called after games are loaded on screen, at the end of display all movies function
     function hideSpinner(){
     $('.loader').css('display','none');
     }
-
-    // hides the actual log-out click trigger when not logged in
-    if(!Cookies.get("authenticated")){
-      $('#actual-log-out').css('display','none');
-    }else showGreetings();
 
     // get container for all movies
     let containerElement = document.getElementById("flex-container");
@@ -48,23 +37,12 @@ window.addEventListener("load", function() {
 
     moviesModel.getAll(takeValue, skipValue).then(displayAllMovies);
 
-    //  Shows welcome message, hides login and register buttons, call this first, before page paint, see above
-    function showGreetings(){
-        $('#login').css('display','none');
-        $('#register').css('display','none');
-        $('#greeter').css('display','inline-block');
-        $('#greeter').html(`Hello ${usernameCookieValue} | <span id='logout'>Log out</span>`);
-    }
-
-
     // Shows admin only buttons for each movie: edit, delete, 
     function showAdminButtons(){
        if(Cookies.get("authenticated")){
         $('.admin-button').css('display','inline-block');
         }
     }
-    
-    
     
     function displayMovie(movie) {
 
@@ -155,30 +133,7 @@ window.addEventListener("load", function() {
 
 
     }
-
-    function clearCookies() {
-      Cookies.remove('username');
-      Cookies.remove('authenticated');
-      Cookies.remove('accessToken');
-    }
-    
-
-    // TOPNAV click listeners
-
-    $('#register').click(function(){
-      window.open("../pages/register.html","_self");
-    });
-    $('#login').click(function(){
-      window.open("../pages/login.html","_self");
-    });
-    $('#logout').click(function(){
-      let quitter = new User();
-      quitter.logoutUser(accessTokenCookieValue).then(clearCookies()).then(setTimeout(function(){location.reload();},500));
-    });
-
-    
-
-    
+  
     // SEARCH MOVIE by title
 
     $('#searchButton').on('click', function() {

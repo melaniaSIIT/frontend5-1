@@ -552,3 +552,46 @@ form:hover {
       left: 33%;
     }
  }
+
+/*media queries for add movie form */
+ @media screen and (max-width: 320px) {
+  form {
+    border: solid 2px white;
+    padding: 2px;
+    width: 350px;
+    font-size: 16px;
+    margin: 0px 30px;
+  }
+  #addMoreMovies {
+    font-size: 16px;
+    margin: 100px 300px 0px 150px;
+  }
+ }
+
+ @media screen and (max-width: 425px) {
+  form {
+    border: solid 2px white;
+    padding: 2px;
+    width: 350px;
+    font-size: 16px;
+    margin: 0px 30px;
+  }
+  #addMoreMovies {
+    font-size: 30px;
+    margin: 100px 300px 0px 150px;
+  }
+ }
+
+ @media screen and (max-width: 1024px) {
+  form {
+    border: solid 2px white;
+    padding: 10px;
+    width: 400px;
+    font-size: 16px;
+    margin: 30px;
+  }
+  #addMoreMovies {
+    font-size: 30px;
+    margin: 100px 300px 0px 150px;
+  }
+ }
