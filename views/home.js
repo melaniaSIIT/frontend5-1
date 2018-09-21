@@ -1,7 +1,7 @@
 window.addEventListener("load", function() {
 
 
-
+  let accessTokenCookieValue = Cookies.get("accessToken");
 
     // function that hides spinner must be called after games are loaded on screen, at the end of display all movies function
     function hideSpinner(){
@@ -66,7 +66,7 @@ window.addEventListener("load", function() {
 	  deleteBtn.addEventListener("click", function() {
 		movie.deleteMovie(accessTokenCookieValue).then(function() {
       alert(movie.title + "has been deleted!");
-			moviesModel.getAll().then(displayAllMovies);
+      location.reload();
 		});
 	  });
 
