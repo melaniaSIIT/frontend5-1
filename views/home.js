@@ -33,8 +33,8 @@ window.addEventListener("load", function() {
     const next = pagination.links.next;
 
     let paginationHTML = prev ? `<a href="${prev}">&laquo;</a>` : ``
-    for (let i = 1; i < pagination.numberOfPages; i++) {
-      paginationHTML += `<a href="#page-${i}" data-value="${i}">${i}</a>`
+    for (let i = 0; i < pagination.numberOfPages; i++) {
+      paginationHTML += `<a href="#page-${i}" data-value="${i}">${i+1}</a>`
     } 
     paginationHTML += next ? `<a href="${next}">&raquo;</a>` : ``
     $('.pagination').html(paginationHTML);
