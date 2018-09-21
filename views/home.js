@@ -32,8 +32,21 @@ window.addEventListener("load", function() {
       }
       hideSpinner();
     }
-   
-    moviesModel.getAll().then(displayAllMovies);
+
+    currentUrl = $(location).attr("href");
+    let pageRef = currentUrl.substr(currentUrl.length - 7);
+    let skipPages = $("a[href='" + pageRef + "']").data("value");
+    if (typeof skipPages == "undefined"){
+      skipPages = 0;
+    }
+
+    skipValue = skipPages;
+
+    $('a', '.pagination').click(function(){
+      location.reload();
+    });
+
+    moviesModel.getAll(takeValue, skipValue).then(displayAllMovies);
 
     //  Shows welcome message, hides login and register buttons, call this first, before page paint, see above
     function showGreetings(){
@@ -74,6 +87,7 @@ window.addEventListener("load", function() {
       deleteBtn.setAttribute("class", "admin-button delete-button");
 	  deleteBtn.addEventListener("click", function() {
 		movie.deleteMovie(accessTokenCookieValue).then(function() {
+      alert(movie.title + "has been deleted!");
 			moviesModel.getAll().then(displayAllMovies);
 		});
 	  });
@@ -177,6 +191,7 @@ window.addEventListener("load", function() {
       });
     });
 
+<<<<<<< HEAD
     var input = document.getElementById("search");
       input.addEventListener("keyup", function(event) {
       event.preventDefault();
@@ -186,3 +201,12 @@ window.addEventListener("load", function() {
     });
 
 })
+=======
+    // ADD MOVIE
+    $('#add-movies').on('click', function() {
+      window.open("../pages/addMovie.html","_self");
+    });
+});
+
+
+>>>>>>> e61bc69c855a47c92ef1dae2b35bc6ebc639520a
