@@ -32,8 +32,21 @@ window.addEventListener("load", function() {
       }
       hideSpinner();
     }
-   
-    moviesModel.getAll().then(displayAllMovies);
+
+    currentUrl = $(location).attr("href");
+    let pageRef = currentUrl.substr(currentUrl.length - 7);
+    let skipPages = $("a[href='" + pageRef + "']").data("value");
+    if (typeof skipPages == "undefined"){
+      skipPages = 0;
+    }
+
+    skipValue = skipPages;
+
+    $('a', '.pagination').click(function(){
+      location.reload();
+    });
+
+    moviesModel.getAll(takeValue, skipValue).then(displayAllMovies);
 
     //  Shows welcome message, hides login and register buttons, call this first, before page paint, see above
     function showGreetings(){
