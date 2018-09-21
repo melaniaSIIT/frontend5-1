@@ -156,50 +156,6 @@ body {
     left: -1px;
 }
 
-/* Search bar */
-.topnav .search-container {
-    float: right;
-    position: relative;
-    left: -1px;
-  }
-  
-  .topnav input[type=text] {
-    padding: 6px;
-    margin-top: 8px;
-    font-size: 17px;
-    border: none;
-    background-color: #F8E0F1;
-  }
-  
-  #searchButton {
-    float: right;
-    padding: 6px 10px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background: #F5A9E1;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  #searchButton:hover {
-    background: #FA58D0;
-  }
-  
-  @media screen and (max-width: 600px) {
-    .topnav .search-container {
-      float: none;
-    }
-    .topnav a, .topnav input[type=text], #searchButton {
-      float: none;
-      display: block;
-      text-align: left;
-      width: 100%;
-      margin: 0;
-      padding: 14px;
-    }
-  }
-
   #greeter{
     float:right;
     margin-right: 1em;
