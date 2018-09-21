@@ -191,7 +191,7 @@ window.addEventListener("load", function() {
       });
     });
 
-<<<<<<< HEAD
+
     var input = document.getElementById("search");
       input.addEventListener("keyup", function(event) {
       event.preventDefault();
@@ -200,13 +200,15 @@ window.addEventListener("load", function() {
       }
     });
 
-})
-=======
     // ADD MOVIE
     $('#add-movies').on('click', function() {
       window.open("../pages/addMovie.html","_self");
     });
-});
+
+})
 
 
->>>>>>> e61bc69c855a47c92ef1dae2b35bc6ebc639520a
+
+
+
+
