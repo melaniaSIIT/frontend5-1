@@ -1,5 +1,6 @@
 body {
 background-color: rgba(195, 223, 230, 0.65);
+cursor: default;
 }
 
 .login {
@@ -8,6 +9,7 @@ background-color: rgba(195, 223, 230, 0.65);
   padding: 30px 25px;
   background-color: rgba(120, 170, 173, 0.3);
   border: 1px solid rgba(120, 170, 173, 0.3);
+  box-shadow: -2px 3px 2px 1px rgba(0,0,0,0.1)
 }
 
  h1.login-title {
@@ -41,13 +43,19 @@ background-color: rgba(195, 223, 230, 0.65);
   height: 50px;
   padding: 0;
   font-size: 20px;
-  color: #00171c;
+  color: #0d3e3e;
   text-align: center;
-  background:rgba(111, 185, 143,0.5);
-  border: 0;
+  background:#bad7da;
+  border: 1px solid #0d3e3e;
   border-radius: 5px;
   cursor: pointer; 
   outline:0;
+}
+
+.login-button:hover {
+  color: #fff;
+  background-color: black;
+  transition: 1s;
 }
 
 .login-lost
