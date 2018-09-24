@@ -88,8 +88,8 @@ window.addEventListener("load", function() {
       deleteBtn.setAttribute("id", "delete-" + movie.id);
       deleteBtn.setAttribute("name", "Delete");
       deleteBtn.setAttribute("class", "admin-button delete-button");
-    deleteBtn.addEventListener("click", function() {
-    movie.deleteMovie(accessTokenCookieValue).then(function() {
+      deleteBtn.addEventListener("click", function() {
+      movie.deleteMovie(accessTokenCookieValue).then(function() {
       alert(movie.title + "has been deleted!");
       location.reload();
     });
@@ -159,30 +159,41 @@ window.addEventListener("load", function() {
 
     }
   
-    // SEARCH MOVIE by title
+  // SEARCH MOVIE by title
+
+    let isSearching = false;
+    
+    function checkIfSearchIsPresent() {
+      const search = location.search.substr(1);
+      const attribute = search.split('=')[0];
+      const searchValue = search.split('=')[1];
+       if (attribute === 'search') {
+        isSearching = true
+        $('#search').val(searchValue);
+        searchMovies(searchValue);
+      }
+    }
+
+    checkIfSearchIsPresent()
 
     $('#searchButton').on('click', function() {
       let searchFor = $('#search').val(); 
+      searchMovies(searchFor)
+    });
+     function searchMovies(searchFor) {
+      isSearching = true
       let newMovies = new Movies();
       newMovies.searchByTitle(searchFor).then(function(response) {
         containerElement.innerHTML = '';
         displayAllMovies(response);
         console.log(response.results);
+        isSearching = false;
+        history.pushState({}, document.title, "home.html");      
       });
-    });
-
-
-    var input = document.getElementById("search");
-      input.addEventListener("keyup", function(event) {
-      event.preventDefault();
-      if (event.keyCode === 13) {
-        document.getElementById("searchButton").click();
-      }
-    });
+    }
 
     // ADD MOVIE
     $('#add-movies').on('click', function() {
       window.open("../pages/addMovie.html","_self");
     });
-
-})
+});

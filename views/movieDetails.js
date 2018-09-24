@@ -220,7 +220,6 @@ window.addEventListener("load", function() {
     location.href = `home.html?search=${searchFor}`
   });
 
-
   var input = document.getElementById("search");
     input.addEventListener("keyup", function(event) {
     event.preventDefault();
