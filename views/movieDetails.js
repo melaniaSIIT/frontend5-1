@@ -89,6 +89,7 @@ window.addEventListener("load", function() {
           }
         } else {
           inputField = document.createElement("input");
+          inputField.setAttribute('class','edit-input-field')
           // if the value is undefined, the input should not be filled with undefined or NaN
           // will be filled with its property (with the placeholder)
           if(movieDetails[movieProperty] !== undefined && movieDetails[movieProperty] !== "N/A") {

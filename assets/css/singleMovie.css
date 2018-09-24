@@ -234,6 +234,9 @@ article {
 #editButtonId {
     display: none;
 }
+.edit-input-field {
+    width: 45%;
+}
 
 #deleteButtonId {
     display: none;
@@ -266,8 +269,8 @@ article {
 }
 
 textarea {
-    width: 49.2%;
-    height: 10%;
+    width: 66.2%;
+    height: 85px;
 }
 
 .clear {
@@ -435,6 +438,7 @@ textarea {
       background-color: transparent;
       color: black;
     }
+
    
     #searchButton {
       padding: 13.6px;
