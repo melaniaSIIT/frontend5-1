@@ -15,7 +15,6 @@ window.addEventListener("load", function() {
   if(!Cookies.get("authenticated")){
     $('#actual-log-out').css('display','none');
     $('#editButtonId').css('display', 'none');
-    $('#deleteButtonId').css('display', 'none');
   } else showGreetings();
 
   //  Shows welcome message, hides login and register buttons, call this first, before page paint, see above
@@ -31,7 +30,6 @@ window.addEventListener("load", function() {
   function showAdminButtons(){
     if(Cookies.get("authenticated")){
       $('#editButtonId').css('display', 'inline-block');
-      $('#deleteButtonId').css('display', 'inline-block');
     }
   }
 
@@ -155,13 +153,8 @@ window.addEventListener("load", function() {
       editButton.setAttribute("id", "editButtonId");
       editButton.addEventListener("click", editButtonFunction);
           
-      var deleteButton = document.createElement("button");
-      deleteButton.innerHTML = "Delete";
-      deleteButton.setAttribute("class", "actionButtonClass");
-      deleteButton.setAttribute("id", "deleteButtonId");
-       
+         
       actionContainer.appendChild(editButton);
-      actionContainer.appendChild(deleteButton);
       containerEl.appendChild(actionContainer);
         showAdminButtons()
     }

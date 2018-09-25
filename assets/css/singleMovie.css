@@ -465,6 +465,9 @@ textarea {
     #title-logo {
       display: none;
     }
+    #greeter {
+      left: 38px;
+    }
 }
 
 
@@ -472,8 +475,8 @@ textarea {
     #flex-container {
       margin-left: 50px;
     }
-     #greeter {
-      left: 200px;
+    #greeter {
+      left: 38px;
     }
 }
 @media screen and (max-width: 350px) {
@@ -493,8 +496,8 @@ textarea {
       left: 10px;
     }
     #greeter {
-      left: 150px;
-      top: 8px;
+      left: 10px;
+      top: 5px;
     }
 }
 

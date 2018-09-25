@@ -185,8 +185,15 @@ window.addEventListener("load", function() {
       let newMovies = new Movies();
       newMovies.searchByTitle(searchFor).then(function(response) {
         containerElement.innerHTML = '';
-        displayAllMovies(response);
         console.log(response.results);
+        if(response.results.length !== 0){
+          displayAllMovies(response);
+        }
+        else{
+          containerElement.innerHTML = 'No results found.';
+          containerElement.style.color = 'black';
+          containerElement.style.margin = '200px';
+        }
         isSearching = false;
         history.pushState({}, document.title, "home.html");      
       });

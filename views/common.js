@@ -24,11 +24,14 @@ window.addEventListener("load", function() {
 
      // hides the actual log-out click trigger when not logged in
     if(!Cookies.get("authenticated")){
-      $('#actual-log-out').css('display','none');
+      $('#logout').css('display','none');
     } else showGreetings();
 
 
     // TOPNAV click listeners
+    $('#home').click(function(){
+          window.location = "../pages/home.html";
+    });
     $('#register').click(function(){
       window.open("../pages/register.html","_self");
     });
