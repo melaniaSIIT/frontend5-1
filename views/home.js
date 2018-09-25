@@ -58,6 +58,7 @@ window.addEventListener("load", function() {
    
 
     moviesModel.getAll(PAGE_ITEMS, skipValue).then((movies) => {
+      displayRecentMovies(movies);
       displayPagination(movies);
       displayAllMovies(movies);
     })
@@ -203,4 +204,70 @@ window.addEventListener("load", function() {
     $('#add-movies').on('click', function() {
       window.open("../pages/addMovie.html","_self");
     });
+
+  function displayRecentMovies (movies) {
+    
+  // Get ALL movies from database in order to sort by Year
+  let allMovies = new Movies ();
+  allMovies.getAll (100, 0).then((movies) => {
+    let allMoviesArray = movies.results;
+    let moviesByYear = [];
+    // not all objects from API have "Year" key as 4 digits value 
+    // (some mention period like 19##-19##).
+    // Below a new array with movie id, movie poster and movie year (sortable)
+    // is created, year being first 4 characters from "Year"
+    allMoviesArray.forEach(element => {
+      let year = element.Year.substr(0, 4);
+      moviesByYear.push ({
+        id : element.id,
+        yearForSort : year,
+        title : element.Title,
+        posterUrl : element.Poster
+      });
+      });
+      moviesByYear.sort( function (a, b) {
+      return b.yearForSort - a.yearForSort;
+      });
+
+
+      let recentMoviesContainer = document.getElementById('recent');
+
+      for (i=0; i<12; i++) {
+        let recentMoviesHTML = document.createElement('li');
+
+        let movieTitle = document.createElement('p');
+        movieTitle.innerHTML = "Title: " + moviesByYear[i].title;
+
+        let moviePoster = document.createElement('img');
+        $(moviePoster).attr({
+          "src" : moviesByYear[i].posterUrl,
+          "alt":"Movie Image here",
+        });
+
+        let movieYear = document.createElement('p');
+        movieYear.innerHTML = "Year: " + moviesByYear[i].yearForSort;
+
+        recentMoviesHTML.appendChild(movieTitle);
+        recentMoviesHTML.appendChild(moviePoster);
+        recentMoviesHTML.appendChild(movieYear);
+        recentMoviesHTML.setAttribute("class", "movie");
+        
+        console.log(recentMoviesHTML);
+        recentMoviesContainer.appendChild(recentMoviesHTML); 
+
+     }
+
+    });
+  }
+  $('#show-recent').click(function(){
+    $('.flexicon').css('display','flex');
+    setTimeout(function(){
+      window.location.hash = "jump_to_this_location";
+    },666);
+  })
+
+
+
+
+
 });
